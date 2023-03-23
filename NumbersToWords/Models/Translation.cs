@@ -1,5 +1,5 @@
 // Business logic
-namespace NumberToWords.Models
+namespace NumbersToWords.Models
 {
   public class Translation
   {
