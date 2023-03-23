@@ -1,9 +1,15 @@
 using System; 
+using NumberToWords.Models;
 
-class Program 
+// Contains User Interface logic 
+namespace NumberToWords
 {
-  static void Main()
+  class Program 
   {
-    Console.WriteLine("Hello");
+    static void Main()
+    {
+      Translation testTranslation = new Translation();
+      Console.WriteLine(testTranslation.GetType());
+    }
   }
 }
