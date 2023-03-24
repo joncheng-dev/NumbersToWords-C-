@@ -22,5 +22,15 @@ namespace NumbersToWords.Tests
       int result = newTranslation.OnesDigit;
       Assert.AreEqual(result, number);
     }
+
+    [TestMethod]
+    public void SetOnesDigit_SetsValueOfOnesDigit_Void()
+    {
+      Translation newTranslation = new Translation(3);
+      int updatedOnesDigit = 5;
+      newTranslation.OnesDigit = updatedOnesDigit;
+      Assert.AreEqual(updatedOnesDigit, newTranslation.OnesDigit);
+
+    }
   }
 }
