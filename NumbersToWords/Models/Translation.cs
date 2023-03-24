@@ -3,9 +3,16 @@ namespace NumbersToWords.Models
 {
   public class Translation
   {
-    public Translation()
+    private int _onesDigit;
+
+    public int OnesDigit
     {
-      
+      get { return _onesDigit; }
+    }
+
+    public Translation(int num)
+    {
+      _onesDigit = num;
     }
   }
 }
