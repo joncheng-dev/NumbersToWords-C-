@@ -30,7 +30,6 @@ namespace NumbersToWords.Tests
       int updatedOnesDigit = 5;
       newTranslation.OnesDigit = updatedOnesDigit;
       Assert.AreEqual(updatedOnesDigit, newTranslation.OnesDigit);
-
     }
   }
 }
