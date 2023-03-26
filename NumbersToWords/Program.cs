@@ -18,13 +18,15 @@ namespace NumbersToWords
 
       IntToTranslate tran = new IntToTranslate(enteredInteger);
 
+      string returnedResult = tran.NumberToText();
+
       Console.WriteLine("                             \n");
 
       Console.WriteLine($"You entered: {userEnteredString}.");
 
       Console.WriteLine("                             \n");
 
-      Console.WriteLine($"Translation is currently: {tran}");
+      Console.WriteLine($"Translated: {returnedResult}.");
 
     }
   }
