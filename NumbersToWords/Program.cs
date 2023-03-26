@@ -16,17 +16,14 @@ namespace NumbersToWords
 
       int enteredInteger = int.Parse(userEnteredString);
 
-      IntToTranslate tran = new IntToTranslate(enteredInteger);
-
-      string returnedResult = tran.NumberToText();
+      IntToTranslate toTranslate = new IntToTranslate(enteredInteger);
+      string translated = toTranslate.NumberToText();
 
       Console.WriteLine("                             \n");
 
       Console.WriteLine($"You entered: {userEnteredString}.");
 
-      Console.WriteLine("                             \n");
-
-      Console.WriteLine($"Translated: {returnedResult}.");
+      Console.WriteLine($"Translated: {translated}.");
 
     }
   }
