@@ -3,7 +3,7 @@ using System.Collections.Generic;
 // Business logic
 namespace NumbersToWords.Models
 {
-  public class Translation
+  public class IntToTranslate
   {
     // Ones digit placeholder
     private int _onesDigit;
@@ -16,9 +16,15 @@ namespace NumbersToWords.Models
     }
 
     // Constructor 
-    public Translation(int num)
+    public IntToTranslate(int onesPlace)
     {
-      _onesDigit = num;
+      _onesDigit = onesPlace;
+    }
+
+    public string NumberToText()
+    {
+      int index = _onesDigit;
+      return onesTranslation[index];
     }
 
     // Translator for Ones Digit
@@ -34,6 +40,8 @@ namespace NumbersToWords.Models
       { 8, "eight" },
       { 9, "nine" },
     };
+
+
 
   }
 }
