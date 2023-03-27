@@ -16,7 +16,7 @@ namespace NumbersToWords
 
       int enteredInteger = int.Parse(userEnteredString);
 
-      IntToTranslate toTranslate = new IntToTranslate(enteredInteger);
+      IntToTranslate toTranslate = new IntToTranslate(enteredInteger, 8);
       string translated = toTranslate.NumberToText();
 
       Console.WriteLine("                             \n");

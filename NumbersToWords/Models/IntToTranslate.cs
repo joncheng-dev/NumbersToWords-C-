@@ -5,21 +5,34 @@ namespace NumbersToWords.Models
 {
   public class IntToTranslate
   {
-    // Ones digit placeholder
+    // Place-Value Integers
     private int _onesDigit;
+    private int _tensDigit;
 
-    // Ones digit Get & Set
+    // Digit Get & Set
     public int OnesDigit
     {
       get { return _onesDigit; }
       set { _onesDigit = value; }
     }
 
-    // Constructor 
-    public IntToTranslate(int onesPlace)
+    public int TensDigit
+    {
+      get { return _tensDigit; }
+    }
+
+    // Constructor (with overloaded Constructors)
+    public IntToTranslate(int onesPlace, int tensPlace)
     {
       _onesDigit = onesPlace;
+      _tensDigit = tensPlace;
     }
+
+    // public IntToTranslate(int onesPlace, int tensPlace)
+    // {
+    //   _onesDigit = onesPlace;
+    //   _tensDigit = tensPlace;
+    // }
 
     public string NumberToText()
     {
@@ -27,7 +40,7 @@ namespace NumbersToWords.Models
       return onesTranslation[index];
     }
 
-    // Translator for Ones Digit
+    // Translators
     Dictionary<int, string> onesTranslation = new Dictionary<int, string>()
     {
       { 1, "one" },
@@ -41,7 +54,19 @@ namespace NumbersToWords.Models
       { 9, "nine" },
     };
 
-
+    Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
+    {
+      { 10, "ten" },
+      { 11, "eleven" },
+      { 12, "twelve" },
+      { 13, "thirteen" },
+      { 14, "fourteen" },
+      { 15, "fifteen" },
+      { 16, "sixteen" },
+      { 17, "seventeen" },
+      { 18, "eighteen" },
+      { 19, "nineteen" },
+    };
 
   }
 }
