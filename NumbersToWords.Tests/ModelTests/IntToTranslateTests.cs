@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NumbersToWords.Models;
 
+
 namespace NumbersToWords.Tests
 {
   [TestClass]
@@ -62,5 +63,12 @@ namespace NumbersToWords.Tests
     // {
     //   int number = 
     // }
+
+    // [TestMethod]
+    // public void NumberTranslateToText_ReturnsNumbersInTextFormat_String()
+    // {
+    //   int userInputParsed = 4329;
+    //   string result = NumberTranslateToText(userInputParsed);
+    // } 
   }
 }
