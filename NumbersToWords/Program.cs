@@ -28,16 +28,24 @@ namespace NumbersToWords
 
       // Initialize List of Integers
       List<int> separatedIntegers = new List<int>();
-      separatedIntegers.Add(4000);
-      separatedIntegers.Add(300);
-      separatedIntegers.Add(20);
-      separatedIntegers.Add(9);
-      Console.WriteLine("4329 as a list is:\n");
+      // separatedIntegers.Add(4000);
+      // separatedIntegers.Add(300);
+      // separatedIntegers.Add(20);
+      // separatedIntegers.Add(9);
+      // Console.WriteLine("4329 as a list is:\n");
+
+      string userInput = "4329";
+      int userInputInteger = int.Parse(userInput);
+      for (int i = 0; i < userInput.Length; i++) 
+      {
+        separatedIntegers.Add(userInputInteger % (10));
+      }
 
       foreach(int number in separatedIntegers)
       {
         Console.WriteLine(number);
       }
+
 
     }
   }
