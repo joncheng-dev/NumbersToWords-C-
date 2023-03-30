@@ -36,15 +36,26 @@ namespace NumbersToWords
 
       string userInput = "4329";
       int userInputInteger = int.Parse(userInput);
-      for (int i = 0; i < userInput.Length; i++) 
-      {
-        separatedIntegers.Add(userInputInteger % (10));
-      }
 
-      foreach(int number in separatedIntegers)
-      {
-        Console.WriteLine(number);
-      }
+      int result1 = userInputInteger % 10;
+      int result2 = userInputInteger % 100 - result1;
+      int result3 = userInputInteger % 1000 - result2 - result1;
+      int result4 = userInputInteger % 10000 - result3 - result2 - result1;
+
+      Console.WriteLine(result1);
+      Console.WriteLine(result2);
+      Console.WriteLine(result3);
+      Console.WriteLine(result4);
+
+      // for (int i = 0; i < userInput.Length; i++) 
+      // {
+      //   separatedIntegers.Add(userInputInteger % (10));
+      // }
+
+      // foreach(int number in separatedIntegers)
+      // {
+      //   Console.WriteLine(number);
+      // }
 
 
     }
