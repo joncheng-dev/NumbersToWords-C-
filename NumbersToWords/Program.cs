@@ -27,36 +27,26 @@ namespace NumbersToWords
       // Console.WriteLine($"Translated: {translated}.");
 
       // Initialize List of Integers
-      List<int> separatedIntegers = new List<int>();
-      // separatedIntegers.Add(4000);
-      // separatedIntegers.Add(300);
-      // separatedIntegers.Add(20);
-      // separatedIntegers.Add(9);
-      // Console.WriteLine("4329 as a list is:\n");
+      List<double> separatedIntegers = new List<double>();
 
-      string userInput = "4329";
+      string userInput = "1921238";
       int userInputInteger = int.Parse(userInput);
 
-      int result1 = userInputInteger % 10;
-      int result2 = userInputInteger % 100 - result1;
-      int result3 = userInputInteger % 1000 - result2 - result1;
-      int result4 = userInputInteger % 10000 - result3 - result2 - result1;
 
-      Console.WriteLine(result1);
-      Console.WriteLine(result2);
-      Console.WriteLine(result3);
-      Console.WriteLine(result4);
 
-      // for (int i = 0; i < userInput.Length; i++) 
-      // {
-      //   separatedIntegers.Add(userInputInteger % (10));
-      // }
+      double sum = 0;
 
-      // foreach(int number in separatedIntegers)
-      // {
-      //   Console.WriteLine(number);
-      // }
+      for (int i = 0; i < userInput.Length; i++) 
+      {
+        double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
+        sum += result;
+        separatedIntegers.Add(result);
+      }
 
+      foreach (int entry in separatedIntegers)
+      {
+        Console.WriteLine(entry);
+      }
 
     }
   }
