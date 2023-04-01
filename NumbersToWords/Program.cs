@@ -29,7 +29,7 @@ namespace NumbersToWords
       // Initialize List of Integers
       List<double> separatedIntegers = new List<double>();
 
-      string userInput = "1921238";
+      string userInput = "1219";
       int userInputInteger = int.Parse(userInput);
 
 
@@ -40,7 +40,11 @@ namespace NumbersToWords
       {
         double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
         sum += result;
-        separatedIntegers.Add(result);
+
+        if (result != 0) 
+        {
+          separatedIntegers.Insert(0, result);
+        }
       }
 
       foreach (int entry in separatedIntegers)

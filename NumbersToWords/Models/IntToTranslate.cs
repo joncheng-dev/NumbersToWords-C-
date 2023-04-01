@@ -28,12 +28,6 @@ namespace NumbersToWords.Models
       _tensDigit = tensPlace;
     }
 
-    // public IntToTranslate(int onesPlace, int tensPlace)
-    // {
-    //   _onesDigit = onesPlace;
-    //   _tensDigit = tensPlace;
-    // }
-
     public string NumberToText()
     {
       int index = _onesDigit;
