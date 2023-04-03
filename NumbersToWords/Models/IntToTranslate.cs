@@ -13,14 +13,18 @@ namespace NumbersToWords.Models
       set { _userInput = value; }
     }
 
-    // PartitionedValues private field with public get / set
+    // PartitionedValues, an Auto-Implemented Property
     public List<double> PartitionedValues { get; set; }
 
+    // Numerated, an Auto-Implemented Property
+    public string Numerated { get; }
+
     // Constructor
-    public Numbers(string text1, List<double> list1)
+    public Numbers(string text1, List<double> list1, string text2)
     {
       _userInput = text1;
       PartitionedValues = list1;
+      Numerated = text2;
     }
 
     // // Translators

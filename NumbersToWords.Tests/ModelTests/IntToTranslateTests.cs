@@ -16,7 +16,7 @@ namespace NumbersToWords.Tests
       newPartition.Add(20);
       newPartition.Add(4);
 
-      Numbers newNumbers = new Numbers("456", newPartition);
+      Numbers newNumbers = new Numbers("456", newPartition, "twenty four");
       Assert.AreEqual(typeof(Numbers), newNumbers.GetType());
     }
 
@@ -28,7 +28,7 @@ namespace NumbersToWords.Tests
       newPartition.Add(4);
 
       string text = "123";
-      Numbers newNumbers = new Numbers(text, newPartition);
+      Numbers newNumbers = new Numbers(text, newPartition, "twenty four");
       string returnedText = newNumbers.UserInput;
       Assert.AreEqual(text, returnedText);
     }
@@ -40,7 +40,7 @@ namespace NumbersToWords.Tests
       newPartition.Add(20);
       newPartition.Add(4);    
 
-      Numbers newNumbers = new Numbers("789", newPartition);
+      Numbers newNumbers = new Numbers("789", newPartition, "twenty four");
       string newUserInput = "123";
       newNumbers.UserInput = newUserInput;
       Assert.AreEqual(newUserInput, newNumbers.UserInput);
@@ -53,7 +53,7 @@ namespace NumbersToWords.Tests
       newPartition.Add(20);
       newPartition.Add(4);
 
-      Numbers newNumbers = new Numbers("789", newPartition);
+      Numbers newNumbers = new Numbers("789", newPartition, "twenty four");
 
       List<double> result = newNumbers.PartitionedValues;
 
@@ -67,7 +67,7 @@ namespace NumbersToWords.Tests
       newPartition.Add(20);
       newPartition.Add(4);
 
-      Numbers newNumbers = new Numbers("789", newPartition);
+      Numbers newNumbers = new Numbers("789", newPartition, "twenty four");
 
       List<double> newList = new List<double>()
       {
@@ -79,7 +79,20 @@ namespace NumbersToWords.Tests
       newNumbers.PartitionedValues = newList;
 
       Assert.AreEqual(newList, newNumbers.PartitionedValues);
+    }
 
+    [TestMethod]
+    public void SetNumerated_SetsValueOfNumerated_Void()
+    {
+      List<double> newPartition = new List<double>();
+      newPartition.Add(20);
+      newPartition.Add(4);
+
+      Numbers newNumbers = new Numbers("24", newPartition, "twenty four");
+
+      string result = newNumbers.Numerated;
+
+      Assert.AreEqual(result, "twenty four");
     }
   }
 }
