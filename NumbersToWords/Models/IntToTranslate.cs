@@ -1,14 +1,21 @@
 using System.Collections.Generic;
-using NumbersToWords.Models;
 
 // Business logic
 namespace NumbersToWords.Models
 {
   public class Numbers
   {
-    public Numbers()
+    // UserInput private field with public get / set 
+    private string _userInput;
+    public string UserInput
     {
+      get { return _userInput; }
+    }
 
+    // Constructor
+    public Numbers(string text1)
+    {
+      _userInput = text1;
     }
 
     // // Translators
