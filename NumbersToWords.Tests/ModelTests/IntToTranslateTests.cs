@@ -82,7 +82,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void SetNumerated_SetsValueOfNumerated_Void()
+    public void GetNumerated_GetsValueOfNumerated_Void()
     {
       List<double> newPartition = new List<double>();
       newPartition.Add(20);
@@ -94,5 +94,20 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(result, "twenty four");
     }
+
+    [TestMethod]
+    public void SetNumerated_SetsValueOfNumerated_Void()
+    {
+      List<double> newPartition = new List<double>();
+      newPartition.Add(20);
+      newPartition.Add(4);
+
+      Numbers newNumbers = new Numbers("24", newPartition, "twenty four");
+
+      string newNumerated = "three hundred";
+      newNumbers.Numerated = newNumerated;
+
+      Assert.AreEqual(newNumerated, newNumbers.Numerated);
+    }    
   }
 }

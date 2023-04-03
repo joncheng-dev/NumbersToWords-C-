@@ -17,7 +17,7 @@ namespace NumbersToWords.Models
     public List<double> PartitionedValues { get; set; }
 
     // Numerated, an Auto-Implemented Property
-    public string Numerated { get; }
+    public string Numerated { get; set; }
 
     // Constructor
     public Numbers(string text1, List<double> list1, string text2)
