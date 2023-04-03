@@ -1,21 +1,15 @@
 using System.Collections.Generic;
+using NumbersToWords.Models;
 
 // Business logic
 namespace NumbersToWords.Models
 {
-  public class ToBeTranslatedAndResults
+  public class Numbers
   {
-    // Place-Value Integers
-    private int _onesDigit;
+    public Numbers()
+    {
 
-
-    // Constructor (with overloaded Constructors)
-
-    // public string NumberToText()
-    // {
-    //   int index = _onesDigit;
-    //   return onesTranslation[index];
-    // }
+    }
 
     // // Translators
     // Dictionary<int, string> onesTranslation = new Dictionary<int, string>()

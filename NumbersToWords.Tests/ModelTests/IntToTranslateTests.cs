@@ -5,15 +5,15 @@ using NumbersToWords.Models;
 namespace NumbersToWords.Tests
 {
   [TestClass]
-  public class ToBeTranslatedAndResults
+  public class Numbers
   {
     // Tests go here
-    // [TestMethod]
-    // public void ToBeTranslatedAndResultsConstructor_CreatesInstanceOfToBeTranslatedAndResults_ToBeTranslatedAndResults()
-    // {
-    //   ToBeTranslatedAndResults newTranslation = new ToBeTranslatedAndResults(2, 1);
-    //   Assert.AreEqual(typeof(ToBeTranslatedAndResults), newTranslation.GetType());
-    // }
+    [TestMethod]
+    public void NumbersConstructor_CreatesInstanceOfNumbers_Numbers()
+    {
+      Numbers newNumbers = new Numbers();
+      Assert.AreEqual(typeof(Numbers), newNumbers.GetType());
+    }
 
   }
 }
