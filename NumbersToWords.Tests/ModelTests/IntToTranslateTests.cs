@@ -24,5 +24,13 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(text, returnedText);
     }
 
+    [TestMethod]
+    public void SetUserInput_SetsValueOfUserInput_Void()
+    {
+      Numbers newNumbers = new Numbers("789");
+      string newUserInput = "123";
+      newNumbers.UserInput = newUserInput;
+      Assert.AreEqual(newUserInput, newNumbers.UserInput);
+    }
   }
 }

@@ -10,6 +10,7 @@ namespace NumbersToWords.Models
     public string UserInput
     {
       get { return _userInput; }
+      set { _userInput = value; }
     }
 
     // Constructor
