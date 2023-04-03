@@ -59,5 +59,27 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(newPartition, result);
     }
+
+    [TestMethod]
+    public void SetPartitionedValues_SetsValuesOfPartitionedValues_Void()
+    {
+      List<double> newPartition = new List<double>();
+      newPartition.Add(20);
+      newPartition.Add(4);
+
+      Numbers newNumbers = new Numbers("789", newPartition);
+
+      List<double> newList = new List<double>()
+      {
+        700,
+        80,
+        9,
+      };
+
+      newNumbers.PartitionedValues = newList;
+
+      Assert.AreEqual(newList, newNumbers.PartitionedValues);
+
+    }
   }
 }

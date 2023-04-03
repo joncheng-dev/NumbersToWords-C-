@@ -14,7 +14,7 @@ namespace NumbersToWords.Models
     }
 
     // PartitionedValues private field with public get / set
-    public List<double> PartitionedValues { get; }
+    public List<double> PartitionedValues { get; set; }
 
     // Constructor
     public Numbers(string text1, List<double> list1)
