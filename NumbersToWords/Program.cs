@@ -10,47 +10,53 @@ namespace NumbersToWords
     static void Main()
     {
       // UI goes here.
-      // Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-      // Console.WriteLine("Enter a number, and it will be translated to words.");
-      // Console.WriteLine("Enter any integer:\n");
-      // string userEnteredString = Console.ReadLine();
+      Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
+      Console.WriteLine("Enter a number, and it will be translated to words.");
+      Console.WriteLine("Enter any integer:");
 
-      // int enteredInteger = int.Parse(userEnteredString);
+      // User Entered String
+      string userEnteredString = Console.ReadLine();
+      int enteredInteger = int.Parse(userEnteredString);
 
-      // IntToTranslate toTranslate = new IntToTranslate(enteredInteger, 8);
-      // string translated = toTranslate.NumberToText();
-
-      // Console.WriteLine("                             \n");
-
-      // Console.WriteLine($"You entered: {userEnteredString}.");
-
-      // Console.WriteLine($"Translated: {translated}.");
+      // Constructs an Object -- with User Entered String
+      Numbers numbersToTranslate = new Numbers(userEnteredString);
 
       // Initialize List of Integers
       List<double> separatedIntegers = new List<double>();
+      separatedIntegers.Add(10);
+      separatedIntegers.Add(2);
 
-      string userInput = "1219";
-      int userInputInteger = int.Parse(userInput);
+      numbersToTranslate.PartitionedValues = separatedIntegers;
 
+      Console.WriteLine($"User's Input: {numbersToTranslate.UserInput}");
 
-
-      double sum = 0;
-
-      for (int i = 0; i < userInput.Length; i++) 
+      foreach (double item in numbersToTranslate.PartitionedValues)
       {
-        double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
-        sum += result;
-
-        if (result != 0) 
-        {
-          separatedIntegers.Insert(0, result);
-        }
+        Console.WriteLine(item);
       }
 
-      foreach (int entry in separatedIntegers)
-      {
-        Console.WriteLine(entry);
-      }
+      // string userInput = "1219";
+      // int userInputInteger = int.Parse(userInput);
+
+
+
+      // double sum = 0;
+
+      // for (int i = 0; i < userInput.Length; i++) 
+      // {
+      //   double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
+      //   sum += result;
+
+      //   if (result != 0) 
+      //   {
+      //     separatedIntegers.Insert(0, result);
+      //   }
+      // }
+
+      // foreach (int entry in separatedIntegers)
+      // {
+      //   Console.WriteLine(entry);
+      // }
 
     }
   }

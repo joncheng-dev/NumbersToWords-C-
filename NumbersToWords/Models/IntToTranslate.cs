@@ -19,7 +19,16 @@ namespace NumbersToWords.Models
     // Numerated, an Auto-Implemented Property
     public string Numerated { get; set; }
 
-    // Constructor
+    // Constructors - Overloaded
+    public Numbers(string text1)
+    {
+      _userInput = text1;
+    }
+    public Numbers(string text1, List<double> list1)
+    {
+      _userInput = text1;
+      PartitionedValues = list1;
+    }
     public Numbers(string text1, List<double> list1, string text2)
     {
       _userInput = text1;

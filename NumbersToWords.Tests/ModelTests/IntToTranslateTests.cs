@@ -108,6 +108,16 @@ namespace NumbersToWords.Tests
       newNumbers.Numerated = newNumerated;
 
       Assert.AreEqual(newNumerated, newNumbers.Numerated);
-    }    
+    }
+
+    // [TestMethod]
+    // public void NumberSplitter_SplitsNumberIntoPartitions_List()
+    // {
+    //   string userInput = "12";
+    //   int userInputConvertedToInteger = int.Parse(userInput);
+
+    //   NumberSplitter
+    // }
+
   }
 }
