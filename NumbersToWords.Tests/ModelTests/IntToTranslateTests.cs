@@ -110,14 +110,19 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(newNumerated, newNumbers.Numerated);
     }
 
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumberIntoPartitions_List()
-    // {
-    //   string userInput = "12";
-    //   int userInputConvertedToInteger = int.Parse(userInput);
+    [TestMethod]
+    public void NumberSplitter_SplitsNumberIntoPartitions_Void()
+    {
+      string userInput = "12";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(10);
+      newPartition.Add(2);
 
-    //   NumberSplitter
-    // }
+      Numbers newNumbers = new Numbers(userInput, newPartition);      
+      List<double> partitionedNumbers = newNumbers.NumberSplitter();
+
+      Assert.AreEqual(partitionedNumbers, newNumbers.PartitionedValues);
+    }
 
   }
 }

@@ -36,6 +36,13 @@ namespace NumbersToWords.Models
       Numerated = text2;
     }
 
+    // Method to Split User Entered Number into Partitions
+    public List<double> NumberSplitter()
+    {
+      return this.PartitionedValues;
+
+    }
+
     // // Translators
     // Dictionary<int, string> onesTranslation = new Dictionary<int, string>()
     // {
