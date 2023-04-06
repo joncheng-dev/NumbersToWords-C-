@@ -1,3 +1,4 @@
+using System; 
 using System.Collections.Generic;
 
 // Business logic
@@ -39,8 +40,9 @@ namespace NumbersToWords.Models
     // Method to Split User Entered Number into Partitions
     public List<double> NumberSplitter()
     {
+      this.PartitionedValues.Add(10);
+      this.PartitionedValues.Add(1);
       return this.PartitionedValues;
-
     }
 
     // // Translators
@@ -71,5 +73,28 @@ namespace NumbersToWords.Models
     //   { 19, "nineteen" },
     // };
 
+
+
+    // SAVE METHOD HERE FOR LATER (NumberSplitter)
+      // double sum = 0;
+      // int userInputInteger = int.Parse(UserInput);
+
+      // for (int i = 0; i < UserInput.Length; i++) 
+      // {
+      //   double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
+      //   sum += result;
+
+      //   if (result != 0) 
+      //   {
+      //     PartitionedValues.Insert(0, result);
+      //   }
+      // }
+            
+      // foreach (int entry in this.PartitionedValues)
+      // {
+      //   Console.WriteLine(entry);
+      // }
+      
+      // return this.PartitionedValues;
   }
 }

@@ -16,29 +16,27 @@ namespace NumbersToWords
 
       // User Entered String
       string userEnteredString = Console.ReadLine();
-      int enteredInteger = int.Parse(userEnteredString);
 
       // Constructs an Object -- with User Entered String
       Numbers numbersToTranslate = new Numbers(userEnteredString);
 
       // Initialize List of Integers
-      List<double> separatedIntegers = new List<double>();
-      separatedIntegers.Add(10);
-      separatedIntegers.Add(2);
+      // List<double> separatedIntegers = new List<double>();
+      // separatedIntegers = numbersToTranslate.NumberSplitter();
 
-      numbersToTranslate.PartitionedValues = separatedIntegers;
+      // numbersToTranslate.PartitionedValues = separatedIntegers;
 
-      Console.WriteLine($"User's Input: {numbersToTranslate.UserInput}");
+      // Console.WriteLine($"User's Input: {numbersToTranslate.UserInput}");
 
-      foreach (double item in numbersToTranslate.PartitionedValues)
-      {
-        Console.WriteLine(item);
-      }
-
-      // string userInput = "1219";
-      // int userInputInteger = int.Parse(userInput);
+      // foreach (double item in numbersToTranslate.PartitionedValues)
+      // {
+      //   Console.WriteLine(item);
+      // }
 
 
+
+
+      // Write method:
 
       // double sum = 0;
 
