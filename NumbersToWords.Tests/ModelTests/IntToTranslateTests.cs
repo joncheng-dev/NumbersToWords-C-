@@ -111,7 +111,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void NumberSplitter_SplitsNumberIntoPartitions_List()
+    public void NumberSplitter_SplitsNumberIntoPartitions_Void()
     {
       string userInput = "11";
       List<double> newPartition = new List<double>();
@@ -121,7 +121,11 @@ namespace NumbersToWords.Tests
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
 
-      Assert.AreEqual(newPartition, newNumbers.PartitionedValues);
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
     }
 
   }

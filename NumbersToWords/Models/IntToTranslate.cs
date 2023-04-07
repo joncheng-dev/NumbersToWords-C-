@@ -38,11 +38,25 @@ namespace NumbersToWords.Models
     }
 
     // Method to Split User Entered Number into Partitions
-    public List<double> NumberSplitter()
+    public void NumberSplitter()
     {
-      this.PartitionedValues.Add(10);
-      this.PartitionedValues.Add(1);
-      return this.PartitionedValues;
+      List<double> temporaryList = new List<double>();
+
+      double sum = 0;
+      int userInputInteger = int.Parse(UserInput);
+
+      for (int i = 0; i < UserInput.Length; i++) 
+      {
+        double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
+        sum += result;
+
+        if (result != 0) 
+        {
+          temporaryList.Insert(0, result);
+        }
+      }
+
+      PartitionedValues = temporaryList;
     }
 
     // // Translators
