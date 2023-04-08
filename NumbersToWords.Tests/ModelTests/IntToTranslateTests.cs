@@ -111,12 +111,99 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void NumberSplitter_SplitsNumberIntoPartitions_Void()
+    public void NumberSplitter_SplitsNumber9IntoPartitions_Void()
     {
-      string userInput = "11";
+      string userInput = "9";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(9);
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_SplitsNumber0IntoPartitions_Void()
+    {
+      string userInput = "0";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(0);
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    // [TestMethod]
+    // public void NumberSplitter_SplitsNumber10IntoPartitions_Void()
+    // {
+    //   string userInput = "10";
+    //   List<double> newPartition = new List<double>();
+    //   newPartition.Add(10);
+
+    //   Numbers newNumbers = new Numbers(userInput);
+    //   newNumbers.NumberSplitter();
+
+    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+    //   for (int i = 0; i < newPartition.Count; i++)
+    //   {
+    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+    //   }
+    // }
+
+    [TestMethod]
+    public void NumberSplitter_SplitsNumber12IntoPartitions_Void()
+    {
+      string userInput = "12";
       List<double> newPartition = new List<double>();
       newPartition.Add(10);
-      newPartition.Add(1);
+      newPartition.Add(2);
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_SplitsNumber100IntoPartitions_Void()
+    {
+      string userInput = "100";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(100);
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_SplitsNumber384IntoPartitions_Void()
+    {
+      string userInput = "384";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(300);
+      newPartition.Add(80);
+      newPartition.Add(4);
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
