@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NumbersToWords.Models;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 
 namespace NumbersToWords.Tests
 {
@@ -128,11 +128,11 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void NumberSplitter_SplitsNumber0IntoPartitions_Void()
+    public void NumberSplitter_SplitsNumber10IntoPartitions_Void()
     {
-      string userInput = "0";
+      string userInput = "10";
       List<double> newPartition = new List<double>();
-      newPartition.Add(0);
+      newPartition.Add(10);
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
@@ -143,23 +143,6 @@ namespace NumbersToWords.Tests
         Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
       }
     }
-
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber10IntoPartitions_Void()
-    // {
-    //   string userInput = "10";
-    //   List<double> newPartition = new List<double>();
-    //   newPartition.Add(10);
-
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
 
     [TestMethod]
     public void NumberSplitter_SplitsNumber12IntoPartitions_Void()

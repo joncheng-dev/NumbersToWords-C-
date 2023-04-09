@@ -50,10 +50,6 @@ namespace NumbersToWords.Models
         double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
         sum += result;
 
-        if (sum == 0)
-        {
-          temporaryList.Insert(0, result);
-        } 
         if (result != 0) 
         {
           temporaryList.Insert(0, result);
