@@ -198,5 +198,41 @@ namespace NumbersToWords.Tests
       }
     }
 
+    [TestMethod]
+    public void NumberSplitter_SplitsNumber4286IntoPartitions_Void()
+    {
+      string userInput = "4286";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(4000);
+      newPartition.Add(200);
+      newPartition.Add(80);
+      newPartition.Add(6);
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumbersToText_String()
+    {
+      string userInput = "5";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(5);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expected = "five";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expected, newNumbers.Numerated);
+
+    }
+
   }
 }

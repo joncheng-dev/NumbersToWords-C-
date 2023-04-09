@@ -59,19 +59,25 @@ namespace NumbersToWords.Models
       PartitionedValues = temporaryList;
     }
 
-    // // Translators
-    // Dictionary<int, string> onesTranslation = new Dictionary<int, string>()
-    // {
-    //   { 1, "one" },
-    //   { 2, "two" },
-    //   { 3, "three" },
-    //   { 4, "four" },
-    //   { 5, "five" },
-    //   { 6, "six" },
-    //   { 7, "seven" },
-    //   { 8, "eight" },
-    //   { 9, "nine" },
-    // };
+    // Method to translate numbers to numerated form.
+    public void GiveNumeratedForm()
+    {
+      Numerated = "five";
+    }
+
+    // Translators
+    Dictionary<int, string> onesTranslation = new Dictionary<int, string>()
+    {
+      { 1, "one" },
+      { 2, "two" },
+      { 3, "three" },
+      { 4, "four" },
+      { 5, "five" },
+      { 6, "six" },
+      { 7, "seven" },
+      { 8, "eight" },
+      { 9, "nine" },
+    };
 
     // Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
     // {
