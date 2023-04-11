@@ -35,7 +35,7 @@ namespace NumbersToWords.Models
       _userInput = text1;
       PartitionedValues = list1;
       Numerated = text2;
-    }
+    } 
 
     // Method to Split User Entered Number into Partitions
     public void NumberSplitter()
@@ -62,7 +62,25 @@ namespace NumbersToWords.Models
     // Method to translate numbers to numerated form.
     public void GiveNumeratedForm()
     {
-      Numerated = "five";
+      string completedNumeratedForm = "";
+
+      // Loops through each item of List. 
+      // Finds value in dictionary.
+      // Concatenates to string.
+      for (int i = 0; i < PartitionedValues.Count; i++)
+      {
+        foreach(var item in onesTranslation)
+        {
+          if(item.Key == PartitionedValues[i])
+          {
+            completedNumeratedForm += item.Value;
+          }
+        }
+      }
+
+      // Sets Numerated field in object
+      Numerated = completedNumeratedForm;
+
     }
 
     // Translators

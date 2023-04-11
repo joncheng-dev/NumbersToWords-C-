@@ -227,10 +227,10 @@ namespace NumbersToWords.Tests
 
       Numbers newNumbers = new Numbers(userInput, newPartition);
 
-      string expected = "five";
+      string expectedResult = "five";
       newNumbers.GiveNumeratedForm();
 
-      Assert.AreEqual(expected, newNumbers.Numerated);
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
 
     }
 
