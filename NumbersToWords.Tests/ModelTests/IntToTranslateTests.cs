@@ -219,7 +219,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void GiveNumeratedForm_UsesDictionaryToTranslateNumbersToText_String()
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber5ToText_String()
     {
       string userInput = "5";
       List<double> newPartition = new List<double>();
@@ -231,7 +231,21 @@ namespace NumbersToWords.Tests
       newNumbers.GiveNumeratedForm();
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
 
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber20ToText_String()
+    {
+      string userInput = "20";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(20);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "twenty";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
   }

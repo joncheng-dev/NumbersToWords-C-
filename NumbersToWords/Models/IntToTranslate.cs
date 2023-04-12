@@ -69,6 +69,17 @@ namespace NumbersToWords.Models
       // Concatenates to string.
       for (int i = 0; i < PartitionedValues.Count; i++)
       {
+        foreach(var item in tensTranslation)
+        {
+          if(item.Key == PartitionedValues[i])
+          {
+            completedNumeratedForm += item.Value;
+          }
+        }
+      }
+
+      for (int i = 0; i < PartitionedValues.Count; i++)
+      {
         foreach(var item in onesTranslation)
         {
           if(item.Key == PartitionedValues[i])
@@ -97,9 +108,21 @@ namespace NumbersToWords.Models
       { 9, "nine" },
     };
 
-    // Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
+    Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
+    {
+      { 10, "ten"},
+      { 20, "twenty"},
+      { 30, "thirty"},
+      { 40, "forty"},
+      { 50, "fifty"},
+      { 60, "sixty"},
+      { 70, "seventy"},
+      { 80, "eighty"},
+      { 90, "ninety"},
+    };
+
+    // Dictionary<int, string> tensTranslationSpecific = new Dictionary<int, string>()
     // {
-    //   { 10, "ten" },
     //   { 11, "eleven" },
     //   { 12, "twelve" },
     //   { 13, "thirteen" },
