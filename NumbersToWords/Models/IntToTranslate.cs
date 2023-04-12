@@ -62,7 +62,7 @@ namespace NumbersToWords.Models
     // Method to translate numbers to numerated form.
     public void GiveNumeratedForm()
     {
-      string completedNumeratedForm = "";
+      List<string> temporaryList = new List<string>();
 
       // Loops through each item of List. 
       // Finds value in dictionary.
@@ -73,7 +73,7 @@ namespace NumbersToWords.Models
         {
           if(item.Key == PartitionedValues[i])
           {
-            completedNumeratedForm += item.Value;
+            temporaryList.Add(item.Value);
           }
         }
       }
@@ -84,14 +84,21 @@ namespace NumbersToWords.Models
         {
           if(item.Key == PartitionedValues[i])
           {
-            completedNumeratedForm += item.Value;
+            temporaryList.Add(item.Value);
           }
         }
       }
 
       // Sets Numerated field in object
-      Numerated = completedNumeratedForm;
-
+      // Numerated = completedNumeratedForm;
+      for (int i = 0; i < temporaryList.Count; i++)
+      {
+        Numerated += temporaryList[i];
+        if (i + 1 != temporaryList.Count)
+        {
+          Numerated += " ";
+        }
+      }
     }
 
     // Translators

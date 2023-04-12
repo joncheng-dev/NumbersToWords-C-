@@ -248,5 +248,21 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber25ToText_String()
+    {
+      string userInput = "25";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(20);
+      newPartition.Add(5);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "twenty five";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
+
   }
 }
