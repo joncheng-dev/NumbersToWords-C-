@@ -82,6 +82,13 @@ namespace NumbersToWords.Models
         }
         else 
         {
+          foreach(var item in thousandsTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }
           foreach(var item in hundredsTranslation)
           {
             if(item.Key == PartitionedValues[i])
@@ -107,11 +114,6 @@ namespace NumbersToWords.Models
 
 
       }
-
-      // for (int i = 0; i < PartitionedValues.Count; i++)
-      // {
-
-      // }
 
       // Sets Numerated field in object
       // Numerated = completedNumeratedForm;
@@ -176,6 +178,19 @@ namespace NumbersToWords.Models
       { 700, "seven hundred"},
       { 800, "eight hundred"},
       { 900, "nine hundred"},
+    };
+
+    Dictionary<int, string> thousandsTranslation = new Dictionary<int, string>()
+    {
+      { 1000, "one thousand"},
+      { 2000, "two thousand"},
+      { 3000, "three thousand"},
+      { 4000, "four thousand"},
+      { 5000, "five thousand"},
+      { 6000, "six thousand"},
+      { 7000, "seven thousand"},
+      { 8000, "eight thousand"},
+      { 9000, "nine thousand"},
     };
 
 
