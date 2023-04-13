@@ -280,5 +280,21 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber315ToText_String()
+    {
+      string userInput = "315";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(300);
+      newPartition.Add(10);
+      newPartition.Add(5);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "three hundred fifteen";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }    
   }
 }

@@ -82,6 +82,13 @@ namespace NumbersToWords.Models
         }
         else 
         {
+          foreach(var item in hundredsTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }
           foreach(var item in tensTranslation)
           {
             if(item.Key == PartitionedValues[i])
@@ -158,28 +165,40 @@ namespace NumbersToWords.Models
       { 9, "nineteen" },
     };
 
+    Dictionary<int, string> hundredsTranslation = new Dictionary<int, string>()
+    {
+      { 100, "one hundred"},
+      { 200, "two hundred"},
+      { 300, "three hundred"},
+      { 400, "four hundred"},
+      { 500, "five hundred"},
+      { 600, "six hundred"},
+      { 700, "seven hundred"},
+      { 800, "eight hundred"},
+      { 900, "nine hundred"},
+    };
 
 
     // SAVE METHOD HERE FOR LATER (NumberSplitter)
-      // double sum = 0;
-      // int userInputInteger = int.Parse(UserInput);
+    // double sum = 0;
+    // int userInputInteger = int.Parse(UserInput);
 
-      // for (int i = 0; i < UserInput.Length; i++) 
-      // {
-      //   double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
-      //   sum += result;
+    // for (int i = 0; i < UserInput.Length; i++) 
+    // {
+    //   double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
+    //   sum += result;
 
-      //   if (result != 0) 
-      //   {
-      //     PartitionedValues.Insert(0, result);
-      //   }
-      // }
-            
-      // foreach (int entry in this.PartitionedValues)
-      // {
-      //   Console.WriteLine(entry);
-      // }
-      
-      // return this.PartitionedValues;
+    //   if (result != 0) 
+    //   {
+    //     PartitionedValues.Insert(0, result);
+    //   }
+    // }
+
+    // foreach (int entry in this.PartitionedValues)
+    // {
+    //   Console.WriteLine(entry);
+    // }
+
+    // return this.PartitionedValues;
   }
 }
