@@ -69,25 +69,42 @@ namespace NumbersToWords.Models
       // Concatenates to string.
       for (int i = 0; i < PartitionedValues.Count; i++)
       {
-        foreach(var item in tensTranslation)
+        if (PartitionedValues[i] == 10)
         {
-          if(item.Key == PartitionedValues[i])
+          foreach(var item in tensTranslationSpecific)
           {
-            temporaryList.Add(item.Value);
+            if(item.Key == PartitionedValues[i + 1])
+            {
+              temporaryList.Add(item.Value);
+            }              
           }
+          break;
         }
+        else 
+        {
+          foreach(var item in tensTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }
+          foreach(var item in onesTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }          
+        }
+
+
       }
 
-      for (int i = 0; i < PartitionedValues.Count; i++)
-      {
-        foreach(var item in onesTranslation)
-        {
-          if(item.Key == PartitionedValues[i])
-          {
-            temporaryList.Add(item.Value);
-          }
-        }
-      }
+      // for (int i = 0; i < PartitionedValues.Count; i++)
+      // {
+
+      // }
 
       // Sets Numerated field in object
       // Numerated = completedNumeratedForm;
@@ -117,7 +134,6 @@ namespace NumbersToWords.Models
 
     Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
     {
-      { 10, "ten"},
       { 20, "twenty"},
       { 30, "thirty"},
       { 40, "forty"},
@@ -128,18 +144,19 @@ namespace NumbersToWords.Models
       { 90, "ninety"},
     };
 
-    // Dictionary<int, string> tensTranslationSpecific = new Dictionary<int, string>()
-    // {
-    //   { 11, "eleven" },
-    //   { 12, "twelve" },
-    //   { 13, "thirteen" },
-    //   { 14, "fourteen" },
-    //   { 15, "fifteen" },
-    //   { 16, "sixteen" },
-    //   { 17, "seventeen" },
-    //   { 18, "eighteen" },
-    //   { 19, "nineteen" },
-    // };
+    Dictionary<int, string> tensTranslationSpecific = new Dictionary<int, string>()
+    {
+      { 0, "ten"},
+      { 1, "eleven" },
+      { 2, "twelve" },
+      { 3, "thirteen" },
+      { 4, "fourteen" },
+      { 5, "fifteen" },
+      { 6, "sixteen" },
+      { 7, "seventeen" },
+      { 8, "eighteen" },
+      { 9, "nineteen" },
+    };
 
 
 

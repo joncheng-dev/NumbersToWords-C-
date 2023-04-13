@@ -264,5 +264,21 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber15ToText_String()
+    {
+      string userInput = "15";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(10);
+      newPartition.Add(5);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "fifteen";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
+
   }
 }
