@@ -69,6 +69,41 @@ namespace NumbersToWords.Models
       // Concatenates to string.
       for (int i = 0; i < PartitionedValues.Count; i++)
       {
+        if (PartitionedValues[i] >= 10000)
+        {
+          foreach(var item in tenThousandsTranslation)
+          {
+            if(item.Key == PartitionedValues[i + 1])
+            {
+              temporaryList.Add(item.Value);
+            }              
+          }
+          foreach(var item in tenThousandsTranslationSpecific)
+          {
+            if(item.Key == PartitionedValues[i + 1])
+            {
+              temporaryList.Add(item.Value);
+            }              
+          }          
+        } else
+        {
+          foreach(var item in thousandsTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }
+        }
+
+        foreach(var item in hundredsTranslation)
+        {
+          if(item.Key == PartitionedValues[i])
+          {
+            temporaryList.Add(item.Value);
+          }
+        }
+
         if (PartitionedValues[i] == 10)
         {
           foreach(var item in tensTranslationSpecific)
@@ -79,23 +114,8 @@ namespace NumbersToWords.Models
             }              
           }
           break;
-        }
-        else 
+        } else 
         {
-          foreach(var item in thousandsTranslation)
-          {
-            if(item.Key == PartitionedValues[i])
-            {
-              temporaryList.Add(item.Value);
-            }
-          }
-          foreach(var item in hundredsTranslation)
-          {
-            if(item.Key == PartitionedValues[i])
-            {
-              temporaryList.Add(item.Value);
-            }
-          }
           foreach(var item in tensTranslation)
           {
             if(item.Key == PartitionedValues[i])
@@ -109,10 +129,8 @@ namespace NumbersToWords.Models
             {
               temporaryList.Add(item.Value);
             }
-          }          
+          }
         }
-
-
       }
 
       // Sets Numerated field in object
@@ -191,6 +209,32 @@ namespace NumbersToWords.Models
       { 7000, "seven thousand"},
       { 8000, "eight thousand"},
       { 9000, "nine thousand"},
+    };
+
+    Dictionary<int, string> tenThousandsTranslation = new Dictionary<int, string>()
+    {
+      { 20000, "twenty thousand"},
+      { 30000, "thirty thousand"},
+      { 40000, "forty thousand"},
+      { 50000, "fifty thousand"},
+      { 60000, "sixty thousand"},
+      { 70000, "seventy thousand"},
+      { 80000, "eighty thousand"},
+      { 90000, "ninety thousand"},
+    };
+
+    Dictionary<int, string> tenThousandsTranslationSpecific = new Dictionary<int, string>()
+    {
+      { 10000, "ten thousand"},
+      { 11000, "eleven thousand"},
+      { 12000, "twelve thousand"},
+      { 13000, "thirteen thousand"},
+      { 14000, "fourteen thousand"},
+      { 15000, "fifteen thousand"},
+      { 16000, "sixteen thousand"},
+      { 17000, "seventeen thousand"},
+      { 18000, "eighteen thousand"},
+      { 19000, "nineteen thousand"},
     };
 
 

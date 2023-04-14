@@ -348,5 +348,24 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }        
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber10216ToText_String()
+    {
+      string userInput = "13216";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(10000);
+      newPartition.Add(3000);
+      newPartition.Add(200);
+      newPartition.Add(10);
+      newPartition.Add(6);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "thirteen thousand two hundred sixteen";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }       
   }
 }
