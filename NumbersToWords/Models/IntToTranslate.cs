@@ -62,31 +62,34 @@ namespace NumbersToWords.Models
     // Method to translate numbers to numerated form.
     public void GiveNumeratedForm()
     {
+      // List to hold Numerated strings
       List<string> temporaryList = new List<string>();
 
-      // Loops through each item of List. 
-      // Finds value in dictionary.
-      // Concatenates to string.
+      // Loops through each item of List. If key matches dictionary, adds to List
       for (int i = 0; i < PartitionedValues.Count; i++)
-      {
-        if (PartitionedValues[i] >= 10000)
+      {      
+        // Adds Text to List if 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000
+        if (PartitionedValues[i] == 10000)
         {
-          foreach(var item in tenThousandsTranslation)
+          double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
+          foreach(var item in tenThousandsTranslationSpecific)
           {
-            if(item.Key == PartitionedValues[i + 1])
+            if(item.Key == tenPlus)
             {
               temporaryList.Add(item.Value);
             }              
           }
-          foreach(var item in tenThousandsTranslationSpecific)
+          i++;
+        } else
+        {
+          // Adds Text to List if 20000, 30000, 40000, 50000, 60000, 70000, 80000, or 90000
+          foreach(var item in tenThousandsTranslation)
           {
-            if(item.Key == PartitionedValues[i + 1])
+            if(item.Key == PartitionedValues[i])
             {
               temporaryList.Add(item.Value);
             }              
           }          
-        } else
-        {
           foreach(var item in thousandsTranslation)
           {
             if(item.Key == PartitionedValues[i])
@@ -106,15 +109,17 @@ namespace NumbersToWords.Models
 
         if (PartitionedValues[i] == 10)
         {
+          double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
           foreach(var item in tensTranslationSpecific)
           {
-            if(item.Key == PartitionedValues[i + 1])
+            if(item.Key == tenPlus)
             {
               temporaryList.Add(item.Value);
             }              
           }
-          break;
-        } else 
+          i++;
+        } 
+        else 
         {
           foreach(var item in tensTranslation)
           {
@@ -173,16 +178,16 @@ namespace NumbersToWords.Models
 
     Dictionary<int, string> tensTranslationSpecific = new Dictionary<int, string>()
     {
-      { 0, "ten"},
-      { 1, "eleven" },
-      { 2, "twelve" },
-      { 3, "thirteen" },
-      { 4, "fourteen" },
-      { 5, "fifteen" },
-      { 6, "sixteen" },
-      { 7, "seventeen" },
-      { 8, "eighteen" },
-      { 9, "nineteen" },
+      { 10, "ten"},
+      { 11, "eleven" },
+      { 12, "twelve" },
+      { 13, "thirteen" },
+      { 14, "fourteen" },
+      { 15, "fifteen" },
+      { 16, "sixteen" },
+      { 17, "seventeen" },
+      { 18, "eighteen" },
+      { 19, "nineteen" },
     };
 
     Dictionary<int, string> hundredsTranslation = new Dictionary<int, string>()

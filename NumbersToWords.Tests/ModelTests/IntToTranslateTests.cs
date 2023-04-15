@@ -366,6 +366,7 @@ namespace NumbersToWords.Tests
       newNumbers.GiveNumeratedForm();
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
-    }       
+    }
+               
   }
 }
