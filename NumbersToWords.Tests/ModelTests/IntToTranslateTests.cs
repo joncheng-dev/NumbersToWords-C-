@@ -332,6 +332,21 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1000ToText_String()
+    {
+      string userInput = "1000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(1000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "one thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    } 
+
+    [TestMethod]
     public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1216ToText_String()
     {
       string userInput = "1216";
@@ -367,6 +382,39 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
-               
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber99999ToText_String()
+    {
+      string userInput = "99999";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(90000);
+      newPartition.Add(9000);
+      newPartition.Add(900);
+      newPartition.Add(90);
+      newPartition.Add(9);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "ninety nine thousand nine hundred ninety nine";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }                  
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber90000ToText_String()
+    {
+      string userInput = "90000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(90000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "ninety thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }     
   }
 }

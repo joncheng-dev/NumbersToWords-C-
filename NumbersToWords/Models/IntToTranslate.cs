@@ -68,28 +68,69 @@ namespace NumbersToWords.Models
       // Loops through each item of List. If key matches dictionary, adds to List
       for (int i = 0; i < PartitionedValues.Count; i++)
       {      
-        // Adds Text to List if 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000
-        if (PartitionedValues[i] == 10000)
+        // Adds Text to List if XXXXX - 20000, 30000, 40000, 50000, 60000, 70000, 80000, or 90000
+        if(PartitionedValues[i].ToString().Length == 5) 
         {
-          double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
-          foreach(var item in tenThousandsTranslationSpecific)
+          // Adds Text to List if 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000      
+          if (PartitionedValues[i] == 10000)
           {
-            if(item.Key == tenPlus)
+            double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
+            foreach(var item in tenThousandsTranslationSpecific)
             {
-              temporaryList.Add(item.Value);
-            }              
+              if(item.Key == tenPlus)
+              {
+                temporaryList.Add(item.Value);
+              }              
+            }
+            i++;
           }
-          i++;
-        } else
-        {
-          // Adds Text to List if 20000, 30000, 40000, 50000, 60000, 70000, 80000, or 90000
-          foreach(var item in tenThousandsTranslation)
+          // If XXXXX with following 4 digit number following it
+          else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length == 4)
           {
-            if(item.Key == PartitionedValues[i])
+            foreach(var item in tenThousandsTranslation)
             {
-              temporaryList.Add(item.Value);
-            }              
-          }          
+              if (item.Key == PartitionedValues[i])
+              {
+                temporaryList.Add(item.Value);
+              }
+            }
+            foreach(var item in thousandsTranslation)
+            {
+              if(item.Key == PartitionedValues[i + 1])
+              {
+                temporaryList.Add(item.Value);
+              }
+            }
+            i++;
+          }
+          // If XXXXX without following 4 digit number following --  i.e. 9000, but has a XXX three digit number or after   
+          else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length != 4)
+          {
+            foreach(var item in tenThousandsTranslation)
+            {
+              if (item.Key == PartitionedValues[i])
+              {
+                temporaryList.Add(item.Value);
+              }
+            }
+            temporaryList.Add(thousandsTranslation[0000]);
+            i++;
+          }
+          // If XXXXX without any additional numbers
+          else 
+          {
+            foreach(var item in tenThousandsTranslation)
+            {
+              if (item.Key == PartitionedValues[i])
+              {
+                temporaryList.Add(item.Value);
+              }
+            }
+            temporaryList.Add(thousandsTranslation[0000]);
+          } 
+        } 
+        else 
+        {
           foreach(var item in thousandsTranslation)
           {
             if(item.Key == PartitionedValues[i])
@@ -97,7 +138,8 @@ namespace NumbersToWords.Models
               temporaryList.Add(item.Value);
             }
           }
-        }
+        }      
+        
 
         foreach(var item in hundredsTranslation)
         {
@@ -205,6 +247,7 @@ namespace NumbersToWords.Models
 
     Dictionary<int, string> thousandsTranslation = new Dictionary<int, string>()
     {
+      { 0000, "thousand"},
       { 1000, "one thousand"},
       { 2000, "two thousand"},
       { 3000, "three thousand"},
@@ -218,14 +261,14 @@ namespace NumbersToWords.Models
 
     Dictionary<int, string> tenThousandsTranslation = new Dictionary<int, string>()
     {
-      { 20000, "twenty thousand"},
-      { 30000, "thirty thousand"},
-      { 40000, "forty thousand"},
-      { 50000, "fifty thousand"},
-      { 60000, "sixty thousand"},
-      { 70000, "seventy thousand"},
-      { 80000, "eighty thousand"},
-      { 90000, "ninety thousand"},
+      { 20000, "twenty"},
+      { 30000, "thirty"},
+      { 40000, "forty"},
+      { 50000, "fifty"},
+      { 60000, "sixty"},
+      { 70000, "seventy"},
+      { 80000, "eighty"},
+      { 90000, "ninety"},
     };
 
     Dictionary<int, string> tenThousandsTranslationSpecific = new Dictionary<int, string>()
@@ -242,27 +285,5 @@ namespace NumbersToWords.Models
       { 19000, "nineteen thousand"},
     };
 
-
-    // SAVE METHOD HERE FOR LATER (NumberSplitter)
-    // double sum = 0;
-    // int userInputInteger = int.Parse(UserInput);
-
-    // for (int i = 0; i < UserInput.Length; i++) 
-    // {
-    //   double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
-    //   sum += result;
-
-    //   if (result != 0) 
-    //   {
-    //     PartitionedValues.Insert(0, result);
-    //   }
-    // }
-
-    // foreach (int entry in this.PartitionedValues)
-    // {
-    //   Console.WriteLine(entry);
-    // }
-
-    // return this.PartitionedValues;
   }
 }
