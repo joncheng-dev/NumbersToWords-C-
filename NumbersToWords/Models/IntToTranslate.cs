@@ -74,15 +74,28 @@ namespace NumbersToWords.Models
           // Adds Text to List if 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000      
           if (PartitionedValues[i] == 10000)
           {
-            double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
-            foreach(var item in tenThousandsTranslationSpecific)
+            if (i + 1 < PartitionedValues.Count)
             {
-              if(item.Key == tenPlus)
+              double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
+              foreach(var item in tenThousandsTranslationSpecific)
               {
-                temporaryList.Add(item.Value);
-              }              
+                if(item.Key == tenPlus)
+                {
+                  temporaryList.Add(item.Value);
+                }              
+              }
+              i++;
             }
-            i++;
+            else 
+            {
+              foreach(var item in tenThousandsTranslationSpecific)
+              {
+                if(item.Key == PartitionedValues[i])
+                {
+                  temporaryList.Add(item.Value);
+                }              
+              }
+            }
           }
           // If XXXXX with following 4 digit number following it
           else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length == 4)
@@ -103,21 +116,8 @@ namespace NumbersToWords.Models
             }
             i++;
           }
-          // If XXXXX without following 4 digit number following --  i.e. 9000, but has a XXX three digit number or after   
-          else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length != 4)
-          {
-            foreach(var item in tenThousandsTranslation)
-            {
-              if (item.Key == PartitionedValues[i])
-              {
-                temporaryList.Add(item.Value);
-              }
-            }
-            temporaryList.Add(thousandsTranslation[0000]);
-            i++;
-          }
           // If XXXXX without any additional numbers
-          else 
+          else
           {
             foreach(var item in tenThousandsTranslation)
             {
@@ -127,6 +127,11 @@ namespace NumbersToWords.Models
               }
             }
             temporaryList.Add(thousandsTranslation[0000]);
+            // If XXXXX without following 4 digit number following --  i.e. 9000, but has a XXX three digit number or after  
+            if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length != 4)
+            {
+              i++;
+            }
           } 
         } 
         else 
@@ -287,3 +292,30 @@ namespace NumbersToWords.Models
 
   }
 }
+
+
+          // // If XXXXX without following 4 digit number following --  i.e. 9000, but has a XXX three digit number or after   
+          // else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length != 4)
+          // {
+          //   foreach(var item in tenThousandsTranslation)
+          //   {
+          //     if (item.Key == PartitionedValues[i])
+          //     {
+          //       temporaryList.Add(item.Value);
+          //     }
+          //   }
+          //   temporaryList.Add(thousandsTranslation[0000]);
+          //   i++;
+          // }
+          // // If XXXXX without any additional numbers
+          // else if (i == PartitionedValues.Count)
+          // {
+          //   foreach(var item in tenThousandsTranslation)
+          //   {
+          //     if (item.Key == PartitionedValues[i])
+          //     {
+          //       temporaryList.Add(item.Value);
+          //     }
+          //   }
+          //   temporaryList.Add(thousandsTranslation[0000]);
+          // } 

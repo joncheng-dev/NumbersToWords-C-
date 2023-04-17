@@ -415,6 +415,21 @@ namespace NumbersToWords.Tests
       newNumbers.GiveNumeratedForm();
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
-    }     
+    }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber10000ToText_String()
+    {
+      string userInput = "10000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(10000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "ten thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
   }
 }
