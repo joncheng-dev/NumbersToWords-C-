@@ -431,5 +431,20 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber200000ToText_String()
+    {
+      string userInput = "200000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(200000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "two hundred thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }    
   }
 }
