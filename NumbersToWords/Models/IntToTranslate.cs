@@ -78,7 +78,8 @@ namespace NumbersToWords.Models
               temporaryList.Add(item.Value);
             }
           }
-          temporaryList.Add(thousandsTranslation[0000]);
+          if (i + 1 == PartitionedValues.Count)
+          temporaryList.Add(thousandsTranslation[0000]);            
         }
         
         // Adds Text to List if XXXXX - 20000, 30000, 40000, 50000, 60000, 70000, 80000, or 90000

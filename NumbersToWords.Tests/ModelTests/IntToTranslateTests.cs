@@ -445,6 +445,22 @@ namespace NumbersToWords.Tests
       newNumbers.GiveNumeratedForm();
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
-    }    
+    }   
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber430000ToText_String()
+    {
+      string userInput = "430000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(400000);
+      newPartition.Add(30000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "four hundred thirty thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }  
   }
 }
