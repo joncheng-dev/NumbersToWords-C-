@@ -479,5 +479,43 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber435700ToText_String()
+    {
+      string userInput = "439700";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(400000);
+      newPartition.Add(30000);
+      newPartition.Add(9000);
+      newPartition.Add(700);
+          
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "four hundred thirty nine thousand seven hundred";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber435760ToText_String()
+    {
+      string userInput = "439760";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(400000);
+      newPartition.Add(30000);
+      newPartition.Add(9000);
+      newPartition.Add(700);
+      newPartition.Add(60);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "four hundred thirty nine thousand seven hundred sixty";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
+
   }
 }
