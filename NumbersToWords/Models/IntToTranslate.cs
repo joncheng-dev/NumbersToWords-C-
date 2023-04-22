@@ -160,8 +160,7 @@ namespace NumbersToWords.Models
             }
           }
         }      
-        
-
+    
         foreach(var item in hundredsTranslation)
         {
           if(item.Key == PartitionedValues[i])
@@ -172,15 +171,28 @@ namespace NumbersToWords.Models
 
         if (PartitionedValues[i] == 10)
         {
-          double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
-          foreach(var item in tensTranslationSpecific)
+          if (i + 1 < PartitionedValues.Count)
           {
-            if(item.Key == tenPlus)
+            double tenPlus = PartitionedValues[i] + PartitionedValues[i + 1];
+            foreach(var item in tensTranslationSpecific)
             {
-              temporaryList.Add(item.Value);
-            }              
+              if(item.Key == tenPlus)
+              {
+                temporaryList.Add(item.Value);
+              }              
+            }
+            i++;
           }
-          i++;
+          else
+          {
+            foreach(var item in tensTranslationSpecific)
+            {
+              if(item.Key == PartitionedValues[i])
+              {
+                temporaryList.Add(item.Value);
+              }              
+            }  
+          }
         } 
         else 
         {
