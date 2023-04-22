@@ -517,5 +517,24 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber439715ToText_String()
+    {
+      string userInput = "439715";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(400000);
+      newPartition.Add(30000);
+      newPartition.Add(9000);
+      newPartition.Add(700);  
+      newPartition.Add(10);
+      newPartition.Add(5);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "four hundred thirty nine thousand seven hundred fifteen";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }      
   }
 }
