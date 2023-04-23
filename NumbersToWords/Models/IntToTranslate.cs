@@ -68,6 +68,21 @@ namespace NumbersToWords.Models
       // Loops through each item of List. If key matches dictionary, adds to List
       for (int i = 0; i < PartitionedValues.Count; i++)
       {
+        // Adds Text to List if 7 Digits - XXXXXXX
+        if (PartitionedValues[i].ToString().Length == 7)
+        {
+          foreach(var item in millionsTranslation)
+          {
+            if(item.Key == PartitionedValues[i])
+            {
+              temporaryList.Add(item.Value);
+            }
+          }
+          // if (i + 1 == PartitionedValues.Count)
+          // {
+          //   temporaryList.Add(millionsTranslation[0000]);            
+          // }
+        }      
         // Adds Text to List if 6 Digits - XXXXXX
         if (PartitionedValues[i].ToString().Length == 6)
         {
@@ -331,6 +346,19 @@ namespace NumbersToWords.Models
       { 900000, "nine hundred"},                                    
     };
 
+    Dictionary<int, string> millionsTranslation = new Dictionary<int, string>()
+    {
+      { 0000000, "million"},
+      { 1000000, "one million"},
+      { 2000000, "two million"},
+      { 3000000, "three million"},
+      { 4000000, "four million"},
+      { 5000000, "five million"},
+      { 6000000, "six million"},
+      { 7000000, "seven million"},
+      { 8000000, "eight million"},
+      { 9000000, "nine million"},
+    };
   }
 }
 
