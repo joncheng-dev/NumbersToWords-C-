@@ -569,6 +569,22 @@ namespace NumbersToWords.Tests
       newNumbers.GiveNumeratedForm();
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
-    }             
+    }
+
+    [TestMethod]
+    public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700000ToText_String()
+    {
+      string userInput = "1700000";
+      List<double> newPartition = new List<double>();
+      newPartition.Add(1000000);
+      newPartition.Add(700000);
+
+      Numbers newNumbers = new Numbers(userInput, newPartition);
+
+      string expectedResult = "one million seven hundred thousand";
+      newNumbers.GiveNumeratedForm();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    }
   }
 }
