@@ -59,6 +59,11 @@ namespace NumbersToWords.Models
       PartitionedValues = temporaryList;
     }
 
+    public void GiveNumeratedTriplet()
+    {
+      Numerated = "one hundred";
+    }
+
     // Method to translate numbers to numerated form.
     public void GiveNumeratedForm()
     {

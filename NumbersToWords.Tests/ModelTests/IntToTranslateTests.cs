@@ -586,5 +586,39 @@ namespace NumbersToWords.Tests
 
       Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
+
+    [TestMethod]
+    public void GiveNumeratedTriplet_UsesDictionariesToTranslateTriplet_String()
+    {
+      string userInput = "100";
+      List<double> newTriplet = new List<double>();
+      newTriplet.Add(100);
+
+      Numbers newNumbers = new Numbers(userInput, newTriplet);
+
+      string expectedResult = "one hundred";
+      newNumbers.GiveNumeratedTriplet();
+
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+
+    }
+
+    // [TestMethod]
+    // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()
+    // {
+    //   string userInput = "1700012";
+    //   List<double> newPartition = new List<double>();
+    //   newPartition.Add(1000000);
+    //   newPartition.Add(700000);
+    //   newPartition.Add(10);
+    //   newPartition.Add(2);      
+
+    //   Numbers newNumbers = new Numbers(userInput, newPartition);
+
+    //   string expectedResult = "one million seven hundred thousand twelve";
+    //   newNumbers.GiveNumeratedForm();
+
+    //   Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    // }    
   }
 }
