@@ -23,7 +23,7 @@ namespace NumbersToWords
       numbersToTranslate.NumberSplitter();
 
       Console.WriteLine("All elements in list:");
-      foreach(double element in numbersToTranslate.PartitionedValues)
+      foreach(string element in numbersToTranslate.PartitionedValues)
       {
         Console.WriteLine(element);
       }
