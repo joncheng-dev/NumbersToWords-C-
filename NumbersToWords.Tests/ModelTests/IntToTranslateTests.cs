@@ -19,30 +19,29 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(typeof(Numbers), newNumbers.GetType());
     }
 
-    // [TestMethod]
-    // public void GetUserInput_ReturnsUserInput_String()
-    // {
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("024");
+    [TestMethod]
+    public void GetUserInput_ReturnsUserInput_String()
+    {
+      List<string> newPartition = new List<string>();
+      newPartition.Add("024");
 
-    //   string text = "24";
-    //   Numbers newNumbers = new Numbers(text, newPartition, "twenty four");
-    //   string returnedText = newNumbers.UserInput;
-    //   Assert.AreEqual(text, returnedText);
-    // }
+      string text = "24";
+      Numbers newNumbers = new Numbers(text, newPartition, "twenty four");
+      string returnedText = newNumbers.UserInput;
+      Assert.AreEqual(text, returnedText);
+    }
 
-    // [TestMethod]
-    // public void SetUserInput_SetsValueOfUserInput_Void()
-    // {
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(20);
-    //   newPartition.Add(4);    
+    [TestMethod]
+    public void SetUserInput_SetsValueOfUserInput_Void()
+    {
+      List<string> newPartition = new List<string>();
+      newPartition.Add("024");  
 
-    //   Numbers newNumbers = new Numbers("789", newPartition, "twenty four");
-    //   string newUserInput = "123";
-    //   newNumbers.UserInput = newUserInput;
-    //   Assert.AreEqual(newUserInput, newNumbers.UserInput);
-    // }
+      Numbers newNumbers = new Numbers("789", newPartition, "twenty four");
+      string newUserInput = "24";
+      newNumbers.UserInput = newUserInput;
+      Assert.AreEqual(newUserInput, newNumbers.UserInput);
+    }
 
     // [TestMethod]
     // public void GetPartitionedValues_ReturnsPartitionedValues_List()
