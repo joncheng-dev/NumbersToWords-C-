@@ -40,7 +40,10 @@ namespace NumbersToWords.Models
     // Method to Split User Entered Number into Partitions
     public void NumberSplitter()
     {
-     
+      List<string> tempList = new List<string>();
+      tempList.Add("009");
+      
+      PartitionedValues = tempList;
     }
 
     public void GiveNumeratedTriplet()
