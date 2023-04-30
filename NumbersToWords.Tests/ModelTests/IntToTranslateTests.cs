@@ -154,96 +154,17 @@ namespace NumbersToWords.Tests
       }
     }
 
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber10IntoPartitions_Void()
-    // {
-    //   string userInput = "10";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(10);
+    [TestMethod]
+    public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
+    {
+      string userInput = "100";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.GiveNumeratedTriplet();
+      string expectedResult = "one hundred";
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
-
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber12IntoPartitions_Void()
-    // {
-    //   string userInput = "12";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(10);
-    //   newPartition.Add(2);
-
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
-
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber100IntoPartitions_Void()
-    // {
-    //   string userInput = "100";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(100);
-
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
-
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber384IntoPartitions_Void()
-    // {
-    //   string userInput = "384";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(300);
-    //   newPartition.Add(80);
-    //   newPartition.Add(4);
-
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
-
-    // [TestMethod]
-    // public void NumberSplitter_SplitsNumber4286IntoPartitions_Void()
-    // {
-    //   string userInput = "4286";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add(4000);
-    //   newPartition.Add(200);
-    //   newPartition.Add(80);
-    //   newPartition.Add(6);
-
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newNumbers.Numerated, expectedResult);
+    }
 
     // [TestMethod]
     // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()
