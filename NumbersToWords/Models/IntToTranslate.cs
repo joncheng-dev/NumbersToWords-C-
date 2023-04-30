@@ -40,9 +40,16 @@ namespace NumbersToWords.Models
     // Method to Split User Entered Number into Partitions
     public void NumberSplitter()
     {
+      // temporary list to hold elements before transferring to object. 
       List<string> tempList = new List<string>();
-      tempList.Add("009");
-      
+
+      // Take user input value. Separate into triplets. Add to List.
+      int numberOfDigits = UserInput.Length;
+      if (numberOfDigits == 1)
+      {
+        tempList.Add("00" + UserInput);        
+      }
+      // Transfers list contents to Object.
       PartitionedValues = tempList;
     }
 
