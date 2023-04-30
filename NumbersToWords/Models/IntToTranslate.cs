@@ -45,6 +45,10 @@ namespace NumbersToWords.Models
 
       // Take user input value. Separate into triplets. Add to List.
       int numberOfDigits = UserInput.Length;
+      if (numberOfDigits == 2)
+      {
+        tempList.Add("0" + UserInput);        
+      }      
       if (numberOfDigits == 1)
       {
         tempList.Add("00" + UserInput);        
