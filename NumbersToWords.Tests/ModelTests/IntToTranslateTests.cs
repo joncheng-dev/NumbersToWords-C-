@@ -137,6 +137,23 @@ namespace NumbersToWords.Tests
       }
     }
 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList200_Void()
+    {
+      string userInput = "200";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("200"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
     // [TestMethod]
     // public void NumberSplitter_SplitsNumber10IntoPartitions_Void()
     // {
