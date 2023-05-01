@@ -63,6 +63,16 @@ namespace NumbersToWords.Models
 
     public void GiveNumeratedTriplet()
     {
+      List<string> temporaryList = new List<string>();
+      
+      
+      foreach(var item in hundredsTranslation)
+      {
+        if (item.Key == PartitionedValues[i])
+        {
+          temporaryList.Add(item.Value);
+        }
+      }      
       Numerated = "one hundred";
     }
 
@@ -106,17 +116,17 @@ namespace NumbersToWords.Models
       { 19, "nineteen" },
     };
 
-    Dictionary<int, string> hundredsTranslation = new Dictionary<int, string>()
+    Dictionary<string, string> hundredsTranslation = new Dictionary<string, string>()
     {
-      { 100, "one hundred"},
-      { 200, "two hundred"},
-      { 300, "three hundred"},
-      { 400, "four hundred"},
-      { 500, "five hundred"},
-      { 600, "six hundred"},
-      { 700, "seven hundred"},
-      { 800, "eight hundred"},
-      { 900, "nine hundred"},
+      { "100", "one hundred"},
+      { "200", "two hundred"},
+      { "300", "three hundred"},
+      { "400", "four hundred"},
+      { "500", "five hundred"},
+      { "600", "six hundred"},
+      { "700", "seven hundred"},
+      { "800", "eight hundred"},
+      { "900", "nine hundred"},
     };
 
     Dictionary<int, string> thousandsTranslation = new Dictionary<int, string>()

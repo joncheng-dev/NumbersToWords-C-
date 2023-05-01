@@ -158,8 +158,12 @@ namespace NumbersToWords.Tests
     public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
     {
       string userInput = "100";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("100");       
 
       Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+            
       newNumbers.GiveNumeratedTriplet();
       string expectedResult = "one hundred";
 
