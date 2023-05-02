@@ -163,11 +163,15 @@ namespace NumbersToWords.Tests
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
-            
-      newNumbers.GiveNumeratedTriplet();
+
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        newNumbers.GiveNumeratedTriplet(newPartition[i]);
+      }
+
       string expectedResult = "one hundred";
 
-      Assert.AreEqual(newNumbers.Numerated, expectedResult);
+      Assert.AreEqual(expectedResult, newNumbers.Numerated);
     }
 
     // [TestMethod]

@@ -61,19 +61,27 @@ namespace NumbersToWords.Models
       PartitionedValues = tempList;
     }
 
-    public void GiveNumeratedTriplet()
+    public void GiveNumeratedTriplet(string triplet)
     {
       List<string> temporaryList = new List<string>();
       
       
       foreach(var item in hundredsTranslation)
       {
-        if (item.Key == PartitionedValues[i])
+        if (item.Key == triplet)
         {
           temporaryList.Add(item.Value);
         }
-      }      
-      Numerated = "one hundred";
+      }
+      
+      for (int i = 0; i < temporaryList.Count; i++)
+      {
+        Numerated += temporaryList[i];
+        if (i + 1 != temporaryList.Count)
+        {
+          Numerated += " ";
+        }
+      }
     }
 
     // Translators
