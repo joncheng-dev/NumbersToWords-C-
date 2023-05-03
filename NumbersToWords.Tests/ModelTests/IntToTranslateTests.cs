@@ -155,24 +155,35 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
+    public void GiveNumeratedTriplet_PlacesDigitsInAListThenUsesLocationInListWithDictionaryToTranslateToWords1_Void()
     {
-      string userInput = "100";
-      List<string> newPartition = new List<string>();
-      newPartition.Add("100");       
+      string userInput = "1";
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
-
-      for (int i = 0; i < newPartition.Count; i++)
-      {
-        newNumbers.GiveNumeratedTriplet(newPartition[i]);
-      }
-
-      string expectedResult = "one hundred";
-
-      Assert.AreEqual(expectedResult, newNumbers.Numerated);
+      // PartitionedValues is now "001"
+      
     }
+
+    // [TestMethod]
+    // public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
+    // {
+    //   string userInput = "100";
+    //   List<string> newPartition = new List<string>();
+    //   newPartition.Add("100");       
+
+    //   Numbers newNumbers = new Numbers(userInput);
+    //   newNumbers.NumberSplitter();
+
+    //   for (int i = 0; i < newPartition.Count; i++)
+    //   {
+    //     newNumbers.GiveNumeratedTriplet(newPartition[i]);
+    //   }
+
+    //   string expectedResult = "one hundred";
+
+    //   Assert.AreEqual(expectedResult, newNumbers.Numerated);
+    // }
 
     // [TestMethod]
     // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()

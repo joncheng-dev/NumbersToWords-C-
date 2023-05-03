@@ -63,21 +63,24 @@ namespace NumbersToWords.Models
 
     public void GiveNumeratedTriplet(string triplet)
     {
-      List<string> temporaryList = new List<string>();
+      // List holding the digits separated into place
+      
+      // List holding the numerated numbers as text
+      List<string> numeratedToText = new List<string>();
       
       
       foreach(var item in hundredsTranslation)
       {
         if (item.Key == triplet)
         {
-          temporaryList.Add(item.Value);
+          numeratedToText.Add(item.Value);
         }
       }
       
-      for (int i = 0; i < temporaryList.Count; i++)
+      for (int i = 0; i < numeratedToText.Count; i++)
       {
-        Numerated += temporaryList[i];
-        if (i + 1 != temporaryList.Count)
+        Numerated += numeratedToText[i];
+        if (i + 1 != numeratedToText.Count)
         {
           Numerated += " ";
         }
@@ -126,15 +129,15 @@ namespace NumbersToWords.Models
 
     Dictionary<string, string> hundredsTranslation = new Dictionary<string, string>()
     {
-      { "100", "one hundred"},
-      { "200", "two hundred"},
-      { "300", "three hundred"},
-      { "400", "four hundred"},
-      { "500", "five hundred"},
-      { "600", "six hundred"},
-      { "700", "seven hundred"},
-      { "800", "eight hundred"},
-      { "900", "nine hundred"},
+      { "1", "one hundred"},
+      { "2", "two hundred"},
+      { "3", "three hundred"},
+      { "4", "four hundred"},
+      { "5", "five hundred"},
+      { "6", "six hundred"},
+      { "7", "seven hundred"},
+      { "8", "eight hundred"},
+      { "9", "nine hundred"},
     };
 
     Dictionary<int, string> thousandsTranslation = new Dictionary<int, string>()
