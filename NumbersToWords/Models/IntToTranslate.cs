@@ -61,14 +61,27 @@ namespace NumbersToWords.Models
       PartitionedValues = tempList;
     }
 
-    public void GiveNumeratedTriplet(string triplet)
+    public static List<char> TripletIntoPlaceValues(string triplet)
     {
       // List holding the digits separated into place
-      
+      List<char> digitsIntoPlaceValue = new List<char>();
+      // Digits separated into a character list
+      for (int i = 0; i < triplet.Length; i++)
+      {
+        digitsIntoPlaceValue.Add(triplet[i]);
+      }
+
+      return digitsIntoPlaceValue;
+    } 
+
+    public void GiveNumeratedTriplet()
+    {
+
+
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
-      
-      
+
+
       foreach(var item in hundredsTranslation)
       {
         if (item.Key == triplet)

@@ -155,15 +155,26 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void GiveNumeratedTriplet_PlacesDigitsInAListThenUsesLocationInListWithDictionaryToTranslateToWords1_Void()
+    public void TripletIntoPlaceValues_ReturnsATripletIntoACharacterList_Void()
     {
       string userInput = "1";
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues is now "001"
-      
+      TripletIntoPlaceValues("001");
     }
+
+    // [TestMethod]
+    // public void GiveNumeratedTriplet_PlacesDigitsInAListThenUsesLocationInListWithDictionaryToTranslateToWords1_Void()
+    // {
+    //   string userInput = "1";
+
+    //   Numbers newNumbers = new Numbers(userInput);
+    //   newNumbers.NumberSplitter();
+    //   // PartitionedValues is now "001"
+    //   newNumbers.GiveNumeratedTriplet()
+    // }
 
     // [TestMethod]
     // public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
