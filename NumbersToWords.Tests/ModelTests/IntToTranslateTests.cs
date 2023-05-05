@@ -162,7 +162,7 @@ namespace NumbersToWords.Tests
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues is now "001"
-      TripletIntoPlaceValues("001");
+      newNumbers.TripletIntoPlaceValues("001");
     }
 
     // [TestMethod]
