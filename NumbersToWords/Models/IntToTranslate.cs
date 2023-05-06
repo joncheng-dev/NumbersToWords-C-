@@ -74,31 +74,31 @@ namespace NumbersToWords.Models
       return digitsIntoPlaceValue;
     } 
 
-    public void GiveNumeratedTriplet()
-    {
+    // public void GiveNumeratedTriplet()
+    // {
 
 
-      // List holding the numerated numbers as text
-      List<string> numeratedToText = new List<string>();
+    //   // List holding the numerated numbers as text
+    //   List<string> numeratedToText = new List<string>();
 
 
-      foreach(var item in hundredsTranslation)
-      {
-        if (item.Key == triplet)
-        {
-          numeratedToText.Add(item.Value);
-        }
-      }
+    //   foreach(var item in hundredsTranslation)
+    //   {
+    //     if (item.Key == triplet)
+    //     {
+    //       numeratedToText.Add(item.Value);
+    //     }
+    //   }
       
-      for (int i = 0; i < numeratedToText.Count; i++)
-      {
-        Numerated += numeratedToText[i];
-        if (i + 1 != numeratedToText.Count)
-        {
-          Numerated += " ";
-        }
-      }
-    }
+    //   for (int i = 0; i < numeratedToText.Count; i++)
+    //   {
+    //     Numerated += numeratedToText[i];
+    //     if (i + 1 != numeratedToText.Count)
+    //     {
+    //       Numerated += " ";
+    //     }
+    //   }
+    // }
 
     // Translators
     Dictionary<int, string> onesTranslation = new Dictionary<int, string>()

@@ -162,7 +162,19 @@ namespace NumbersToWords.Tests
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues is now "001"
-      newNumbers.TripletIntoPlaceValues("001");
+      // result should be a list of 0, 0, 1
+      List<char> result = Numbers.TripletIntoPlaceValues("001");
+      // List to compare results to -- 
+      List<char> testList = new List<char>();
+      testList.Add('0');
+      testList.Add('0');
+      testList.Add('1');
+      // Check if both lists match in composition.            
+      Assert.AreEqual(result.Count, testList.Count);
+      for (int i = 0; i < result.Count; i++)
+      {
+        Assert.AreEqual(result[i], testList[i]);
+      }
     }
 
     // [TestMethod]
