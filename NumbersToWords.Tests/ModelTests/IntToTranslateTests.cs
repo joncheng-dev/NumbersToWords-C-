@@ -155,7 +155,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void TripletIntoPlaceValues_ReturnsATripletIntoACharacterList_Void()
+    public void TripletIntoPlaceValues_ReturnsATriplet001IntoACharacterList_Void()
     {
       string userInput = "1";
 
@@ -169,6 +169,29 @@ namespace NumbersToWords.Tests
       testList.Add('0');
       testList.Add('0');
       testList.Add('1');
+      // Check if both lists match in composition.            
+      Assert.AreEqual(result.Count, testList.Count);
+      for (int i = 0; i < result.Count; i++)
+      {
+        Assert.AreEqual(result[i], testList[i]);
+      }
+    }
+
+    [TestMethod]
+    public void TripletIntoPlaceValues_ReturnsATriplet302IntoACharacterList_Void()
+    {
+      string userInput = "302";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "302"
+      // result should be a list of 3, 0, 2
+      List<char> result = Numbers.TripletIntoPlaceValues("302");
+      // List to compare results to -- 
+      List<char> testList = new List<char>();
+      testList.Add('3');
+      testList.Add('0');
+      testList.Add('2');
       // Check if both lists match in composition.            
       Assert.AreEqual(result.Count, testList.Count);
       for (int i = 0; i < result.Count; i++)
