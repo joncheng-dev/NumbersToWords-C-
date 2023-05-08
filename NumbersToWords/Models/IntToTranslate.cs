@@ -74,44 +74,51 @@ namespace NumbersToWords.Models
       return digitsIntoPlaceValue;
     } 
 
-    // public void GiveNumeratedTriplet()
-    // {
+    public void GiveNumeratedTriplet()
+    {
+      // List holding the numerated numbers as text
+      List<string> numeratedToText = new List<string>();
 
+      List<char> results = Numbers.TripletIntoPlaceValues("001");
 
-    //   // List holding the numerated numbers as text
-    //   List<string> numeratedToText = new List<string>();
+      foreach(var item in hundredsTranslation)
+      {
+        if (item.Key == results[0])
+        {
+          numeratedToText.Add(item.Value);
+        }
+      }
 
+      foreach(var item in onesTranslation)
+      {
+        if (item.Key == results[2])
+        {
+          numeratedToText.Add(item.Value);
+        }
+      }
 
-    //   foreach(var item in hundredsTranslation)
-    //   {
-    //     if (item.Key == triplet)
-    //     {
-    //       numeratedToText.Add(item.Value);
-    //     }
-    //   }
-      
-    //   for (int i = 0; i < numeratedToText.Count; i++)
-    //   {
-    //     Numerated += numeratedToText[i];
-    //     if (i + 1 != numeratedToText.Count)
-    //     {
-    //       Numerated += " ";
-    //     }
-    //   }
-    // }
+      for (int i = 0; i < numeratedToText.Count; i++)
+      {
+        Numerated += numeratedToText[i];
+        if (i + 1 != numeratedToText.Count)
+        {
+          Numerated += " ";
+        }
+      }
+    }
 
     // Translators
-    Dictionary<int, string> onesTranslation = new Dictionary<int, string>()
+    Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
-      { 1, "one" },
-      { 2, "two" },
-      { 3, "three" },
-      { 4, "four" },
-      { 5, "five" },
-      { 6, "six" },
-      { 7, "seven" },
-      { 8, "eight" },
-      { 9, "nine" },
+      { '1', "one" },
+      { '2', "two" },
+      { '3', "three" },
+      { '4', "four" },
+      { '5', "five" },
+      { '6', "six" },
+      { '7', "seven" },
+      { '8', "eight" },
+      { '9', "nine" },
     };
 
     Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
@@ -140,17 +147,17 @@ namespace NumbersToWords.Models
       { 19, "nineteen" },
     };
 
-    Dictionary<string, string> hundredsTranslation = new Dictionary<string, string>()
+    Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
     {
-      { "1", "one hundred"},
-      { "2", "two hundred"},
-      { "3", "three hundred"},
-      { "4", "four hundred"},
-      { "5", "five hundred"},
-      { "6", "six hundred"},
-      { "7", "seven hundred"},
-      { "8", "eight hundred"},
-      { "9", "nine hundred"},
+      { '1', "one hundred"},
+      { '2', "two hundred"},
+      { '3', "three hundred"},
+      { '4', "four hundred"},
+      { '5', "five hundred"},
+      { '6', "six hundred"},
+      { '7', "seven hundred"},
+      { '8', "eight hundred"},
+      { '9', "nine hundred"},
     };
 
     Dictionary<int, string> thousandsTranslation = new Dictionary<int, string>()

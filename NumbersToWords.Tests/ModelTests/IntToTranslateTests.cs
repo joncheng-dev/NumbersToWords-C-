@@ -200,16 +200,24 @@ namespace NumbersToWords.Tests
       }
     }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_PlacesDigitsInAListThenUsesLocationInListWithDictionaryToTranslateToWords1_Void()
-    // {
-    //   string userInput = "1";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary1_Void()
+    {
+      string userInput = "1";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "001"
-    //   newNumbers.GiveNumeratedTriplet()
-    // }
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "001"
+      // Separate into digits of place value.
+      // index 0 --> hundreds
+      // index 1 --> tens
+      // index 2 --> ones
+      List<char> result = Numbers.TripletIntoPlaceValues("001");
+
+      string numeratedTriplet = "one";
+      Assert.AreEqual(newNumbers.Numerated, numeratedTriplet);
+
+    }
 
     // [TestMethod]
     // public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
