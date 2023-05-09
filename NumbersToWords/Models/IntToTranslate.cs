@@ -81,30 +81,30 @@ namespace NumbersToWords.Models
 
       List<char> results = Numbers.TripletIntoPlaceValues("001");
 
-      foreach(var item in hundredsTranslation)
-      {
-        if (item.Key == results[0])
-        {
-          numeratedToText.Add(item.Value);
-        }
-      }
+      // foreach(var item in hundredsTranslation)
+      // {
+      //   if (item.Key == results[0])
+      //   {
+      //     numeratedToText.Add(item.Value);
+      //   }
+      // }
+      Numerated = "one";
+      // foreach(var item in onesTranslation)
+      // {
+      //   if (item.Key == results[2])
+      //   {
+      //     numeratedToText.Add(item.Value);
+      //   }
+      // }
 
-      foreach(var item in onesTranslation)
-      {
-        if (item.Key == results[2])
-        {
-          numeratedToText.Add(item.Value);
-        }
-      }
-
-      for (int i = 0; i < numeratedToText.Count; i++)
-      {
-        Numerated += numeratedToText[i];
-        if (i + 1 != numeratedToText.Count)
-        {
-          Numerated += " ";
-        }
-      }
+      // for (int i = 0; i < numeratedToText.Count; i++)
+      // {
+      //   Numerated += numeratedToText[i];
+      //   if (i + 1 != numeratedToText.Count)
+      //   {
+      //     Numerated += " ";
+      //   }
+      // }
     }
 
     // Translators

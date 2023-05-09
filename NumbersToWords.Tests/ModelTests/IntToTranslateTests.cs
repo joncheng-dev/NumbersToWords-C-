@@ -214,6 +214,8 @@ namespace NumbersToWords.Tests
       // index 2 --> ones
       List<char> result = Numbers.TripletIntoPlaceValues("001");
 
+      newNumbers.GiveNumeratedTriplet();
+      
       string numeratedTriplet = "one";
       Assert.AreEqual(newNumbers.Numerated, numeratedTriplet);
 
