@@ -88,23 +88,23 @@ namespace NumbersToWords.Models
       //     numeratedToText.Add(item.Value);
       //   }
       // }
-      Numerated = "one";
-      // foreach(var item in onesTranslation)
-      // {
-      //   if (item.Key == results[2])
-      //   {
-      //     numeratedToText.Add(item.Value);
-      //   }
-      // }
 
-      // for (int i = 0; i < numeratedToText.Count; i++)
-      // {
-      //   Numerated += numeratedToText[i];
-      //   if (i + 1 != numeratedToText.Count)
-      //   {
-      //     Numerated += " ";
-      //   }
-      // }
+      foreach(var item in onesTranslation)
+      {
+        if (item.Key == results[2])
+        {
+          numeratedToText.Add(item.Value);
+        }
+      }
+
+      for (int i = 0; i < numeratedToText.Count; i++)
+      {
+        Numerated += numeratedToText[i];
+        if (i + 1 != numeratedToText.Count)
+        {
+          Numerated += " ";
+        }
+      }
     }
 
     // Translators
