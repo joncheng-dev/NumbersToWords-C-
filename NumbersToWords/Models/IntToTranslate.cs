@@ -45,17 +45,25 @@ namespace NumbersToWords.Models
 
       // Take user input value. Separate into triplets. Add to List.
       int numberOfDigits = UserInput.Length;
-      if (numberOfDigits == 3)
+      if (numberOfDigits > 3)
       {
-        tempList.Add(UserInput);        
-      }   
-      if (numberOfDigits == 2)
+        tempList.Add("004");
+        tempList.Add("200");
+      }
+      else if (numberOfDigits <= 3)
       {
-        tempList.Add("0" + UserInput);        
-      }      
-      if (numberOfDigits == 1)
-      {
-        tempList.Add("00" + UserInput);        
+        if (numberOfDigits == 3)
+        {
+          tempList.Add(UserInput);        
+        }   
+        if (numberOfDigits == 2)
+        {
+          tempList.Add("0" + UserInput);        
+        }      
+        if (numberOfDigits == 1)
+        {
+          tempList.Add("00" + UserInput);        
+        }
       }
       // Transfers list contents to Object.
       PartitionedValues = tempList;

@@ -218,7 +218,24 @@ namespace NumbersToWords.Tests
       
       string numeratedTriplet = "one";
       Assert.AreEqual(newNumbers.Numerated, numeratedTriplet);
+    }
 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList4200_Void()
+    {
+      string userInput = "4200";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("004");
+      newPartition.Add("200"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
     }
 
     // [TestMethod]
