@@ -47,7 +47,10 @@ namespace NumbersToWords.Models
       // holds the 3 final 3 characters from string.
       string finalThree = remainingString.Substring(remainingString.Length - 3);
       // Take user input value. Separate into triplets. Add to List.
+      // remainingString.Substring(0, remainingString.Length - 2);
+      tempList.Add("1");
       tempList.Add(finalThree);
+
       // int numberOfDigits = UserInput.Length;
       // if (numberOfDigits > 3)
       // {
