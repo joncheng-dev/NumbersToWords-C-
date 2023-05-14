@@ -42,14 +42,29 @@ namespace NumbersToWords.Models
     {
       // temporary list to hold elements before transferring to object. 
       List<string> tempList = new List<string>();
-      // holds remaining string after removing final 3 characters.
       string remainingString = UserInput;
-      // holds the 3 final 3 characters from string.
-      string finalThree = remainingString.Substring(remainingString.Length - 3);
-      // Take user input value. Separate into triplets. Add to List.
-      // remainingString.Substring(0, remainingString.Length - 2);
-      tempList.Add("1");
-      tempList.Add(finalThree);
+      string finalThree;
+
+      do
+      {
+        finalThree = remainingString.Substring(remainingString.Length - 3);        
+        tempList.Insert(0, finalThree);
+        remainingString = remainingString.Substring(0, remainingString.Length - 3);
+      }
+      while (remainingString.Length > 3);
+
+      if (remainingString.Length == 3)
+      {
+        tempList.Insert(0, remainingString);
+      }
+      else if (remainingString.Length == 2)
+      {
+        tempList.Insert(0, "0" + remainingString);        
+      } 
+      else if (remainingString.Length == 1)
+      {
+        tempList.Insert(0, "00" + remainingString);          
+      }
 
       // int numberOfDigits = UserInput.Length;
       // if (numberOfDigits > 3)

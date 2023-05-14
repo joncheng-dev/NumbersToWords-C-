@@ -220,24 +220,22 @@ namespace NumbersToWords.Tests
     //   Assert.AreEqual(newNumbers.Numerated, numeratedTriplet);
     // }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList254_Void()
-    // {
-    //   // string userInput = "4200";
-    //   string userInput = "254";
-    //   List<string> newPartition = new List<string>();
-    //   // newPartition.Add("004");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList254_Void()
+    {
+      string userInput = "254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
     [TestMethod]
     public void NumberSplitter_UserInputIntoTripletsInList1254_Void()
@@ -245,7 +243,7 @@ namespace NumbersToWords.Tests
       // string userInput = "4200";
       string userInput = "1254";
       List<string> newPartition = new List<string>();
-      newPartition.Add("1");
+      newPartition.Add("001");
       newPartition.Add("254"); 
 
       Numbers newNumbers = new Numbers(userInput);
