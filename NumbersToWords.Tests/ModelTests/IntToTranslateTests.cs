@@ -274,6 +274,24 @@ namespace NumbersToWords.Tests
       }
     }
 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList671254_Void()
+    {
+      string userInput = "671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("671");
+      newPartition.Add("254"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
     // [TestMethod]
     // public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
     // {
