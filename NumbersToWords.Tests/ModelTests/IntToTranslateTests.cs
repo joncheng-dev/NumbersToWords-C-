@@ -292,6 +292,83 @@ namespace NumbersToWords.Tests
       }
     }
 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList9671254_Void()
+    {
+      string userInput = "9671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("009");
+      newPartition.Add("671");
+      newPartition.Add("254"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList90671254_Void()
+    {
+      string userInput = "90671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("090");
+      newPartition.Add("671");
+      newPartition.Add("254"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList890671452_Void()
+    {
+      string userInput = "890671452";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("890");
+      newPartition.Add("671");
+      newPartition.Add("452"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList3890671452_Void()
+    {
+      string userInput = "3890671452";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("003");
+      newPartition.Add("890");
+      newPartition.Add("671");
+      newPartition.Add("452"); 
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
+
     // [TestMethod]
     // public void GiveNumeratedTriplet_UsesDictionaryToNumerateATriplet100_String()
     // {
