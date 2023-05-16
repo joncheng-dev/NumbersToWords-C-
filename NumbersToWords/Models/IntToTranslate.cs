@@ -45,13 +45,16 @@ namespace NumbersToWords.Models
       string remainingString = UserInput;
       string finalThree;
 
-      do
+      if(remainingString.Length > 3)
       {
-        finalThree = remainingString.Substring(remainingString.Length - 3);        
-        tempList.Insert(0, finalThree);
-        remainingString = remainingString.Substring(0, remainingString.Length - 3);
+        do
+        {
+          finalThree = remainingString.Substring(remainingString.Length - 3);        
+          tempList.Insert(0, finalThree);
+          remainingString = remainingString.Substring(0, remainingString.Length - 3);
+        }
+        while (remainingString.Length > 3);
       }
-      while (remainingString.Length > 3);
 
       if (remainingString.Length == 3)
       {
@@ -69,6 +72,7 @@ namespace NumbersToWords.Models
       PartitionedValues = tempList;
     }
 
+    // Function - Separates triplet into place values
     public static List<char> TripletIntoPlaceValues(string triplet)
     {
       // List holding the digits separated into place
