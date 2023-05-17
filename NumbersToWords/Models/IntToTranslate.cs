@@ -86,24 +86,22 @@ namespace NumbersToWords.Models
       return digitsIntoPlaceValue;
     } 
 
-    public void GiveNumeratedTriplet()
+    public void GiveNumeratedTriplet(List<char> tripletIntoPlaceValues)
     {
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
 
-      List<char> results = Numbers.TripletIntoPlaceValues("001");
-
-      // foreach(var item in hundredsTranslation)
-      // {
-      //   if (item.Key == results[0])
-      //   {
-      //     numeratedToText.Add(item.Value);
-      //   }
-      // }
+      foreach(var item in hundredsTranslation)
+      {
+        if (item.Key == tripletIntoPlaceValues[0])
+        {
+          numeratedToText.Add(item.Value);
+        }
+      }
 
       foreach(var item in onesTranslation)
       {
-        if (item.Key == results[2])
+        if (item.Key == tripletIntoPlaceValues[2])
         {
           numeratedToText.Add(item.Value);
         }
