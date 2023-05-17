@@ -99,6 +99,14 @@ namespace NumbersToWords.Models
         }
       }
 
+      foreach(var item in tensTranslation)
+      {
+        if (item.Key == tripletIntoPlaceValues[1])
+        {
+          numeratedToText.Add(item.Value);
+        }
+      }
+
       foreach(var item in onesTranslation)
       {
         if (item.Key == tripletIntoPlaceValues[2])
@@ -131,30 +139,30 @@ namespace NumbersToWords.Models
       { '9', "nine" },
     };
 
-    Dictionary<int, string> tensTranslation = new Dictionary<int, string>()
+    Dictionary<char, string> tensTranslation = new Dictionary<char, string>()
     {
-      { 20, "twenty"},
-      { 30, "thirty"},
-      { 40, "forty"},
-      { 50, "fifty"},
-      { 60, "sixty"},
-      { 70, "seventy"},
-      { 80, "eighty"},
-      { 90, "ninety"},
+      { '2', "twenty"},
+      { '3', "thirty"},
+      { '4', "forty"},
+      { '5', "fifty"},
+      { '6', "sixty"},
+      { '7', "seventy"},
+      { '8', "eighty"},
+      { '9', "ninety"},
     };
 
-    Dictionary<int, string> tensTranslationSpecific = new Dictionary<int, string>()
+    Dictionary<char, string> tensTranslationSpecific = new Dictionary<char, string>()
     {
-      { 10, "ten"},
-      { 11, "eleven" },
-      { 12, "twelve" },
-      { 13, "thirteen" },
-      { 14, "fourteen" },
-      { 15, "fifteen" },
-      { 16, "sixteen" },
-      { 17, "seventeen" },
-      { 18, "eighteen" },
-      { 19, "nineteen" },
+      { '0', "ten"},
+      { '1', "eleven" },
+      { '2', "twelve" },
+      { '3', "thirteen" },
+      { '4', "fourteen" },
+      { '5', "fifteen" },
+      { '6', "sixteen" },
+      { '7', "seventeen" },
+      { '8', "eighteen" },
+      { '9', "nineteen" },
     };
 
     Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
