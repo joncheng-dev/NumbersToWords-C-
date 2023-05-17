@@ -392,6 +392,38 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary13_Void()
+    {
+      string userInput = "13";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "013"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("013");
+
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      
+      string numeratedTriplet = "thirteen";
+      Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
+    }
+
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary23_Void()
+    {
+      string userInput = "23";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "023"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("023");
+
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      
+      string numeratedTriplet = "twenty three";
+      Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
+    }
+
     // [TestMethod]
     // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()
     // {

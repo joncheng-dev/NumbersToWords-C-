@@ -107,11 +107,24 @@ namespace NumbersToWords.Models
         }
       }
 
-      foreach(var item in onesTranslation)
+      if (tripletIntoPlaceValues[1] == '1')
       {
-        if (item.Key == tripletIntoPlaceValues[2])
+        foreach(var item in tensTranslationSpecific)
         {
-          numeratedToText.Add(item.Value);
+          if (item.Key == tripletIntoPlaceValues[2])
+          {
+            numeratedToText.Add(item.Value);
+          }
+        }
+      } 
+      else 
+      {
+        foreach(var item in onesTranslation)
+        {
+          if (item.Key == tripletIntoPlaceValues[2])
+          {
+            numeratedToText.Add(item.Value);
+          }
         }
       }
 
