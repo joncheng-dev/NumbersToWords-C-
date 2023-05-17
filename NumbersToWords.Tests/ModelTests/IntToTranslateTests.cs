@@ -440,6 +440,22 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary888_Void()
+    {
+      string userInput = "888";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "888"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("888");
+
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      
+      string numeratedTriplet = "eight hundred eighty eight";
+      Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
+    }
+
     // [TestMethod]
     // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()
     // {
