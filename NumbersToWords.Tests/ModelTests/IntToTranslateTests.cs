@@ -424,6 +424,22 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
     }
 
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary519_Void()
+    {
+      string userInput = "519";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "519"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("519");
+
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      
+      string numeratedTriplet = "five hundred nineteen";
+      Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
+    }
+
     // [TestMethod]
     // public void GiveNumeratedForm_UsesDictionaryToTranslateNumber1700012ToText_String()
     // {
