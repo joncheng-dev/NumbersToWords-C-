@@ -448,12 +448,28 @@ namespace NumbersToWords.Tests
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues is now "888"
-      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("888");
+      newNumbers.GiveNumeratedTriplet(Numbers.TripletIntoPlaceValues(userInput));      
 
-      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
-      
       string numeratedTriplet = "eight hundred eighty eight";
       Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
+    }
+
+    [TestMethod]
+    public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()
+    {
+      string userInput = "1";
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "001";
+      newNumbers.GiveNumeratedTriplet(Numbers.TripletIntoPlaceValues(newNumbers.PartitionedValues[0]));
+      // Call some method or function which combines total numeration
+      // based on numbers of elements in PartitionedValues list;
+
+      // Use in method or function -- newNumbers.PartitionedValues.Count
+
+      string finalNumeratedNumber = "one";
+      Assert.AreEqual(newNumbers.Numerated, finalNumeratedNumber);
+
     }
 
     // [TestMethod]
