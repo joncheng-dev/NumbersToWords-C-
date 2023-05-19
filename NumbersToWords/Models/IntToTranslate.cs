@@ -1,5 +1,6 @@
 using System; 
 using System.Collections.Generic;
+using System.Linq;
 
 // Business logic
 namespace NumbersToWords.Models
@@ -17,8 +18,8 @@ namespace NumbersToWords.Models
     // PartitionedValues, an Auto-Implemented Property
     public List<string> PartitionedValues { get; set; }
 
-    // Numerated, an Auto-Implemented Property
-    public string Numerated { get; set; }
+    // NumeratedTriplets, an Auto-Implemented Property
+    public List<string> NumeratedTriplets { get; set; }
 
     // Constructors - Overloaded
     public Numbers(string text1)
@@ -30,11 +31,11 @@ namespace NumbersToWords.Models
       _userInput = text1;
       PartitionedValues = list1;
     }
-    public Numbers(string text1, List<string> list1, string text2)
+    public Numbers(string text1, List<string> list1, List<string> list2)
     {
       _userInput = text1;
       PartitionedValues = list1;
-      Numerated = text2;
+      NumeratedTriplets = list2;
     } 
 
     // Method to Split User Entered Number into Partitions
@@ -90,6 +91,8 @@ namespace NumbersToWords.Models
     {
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
+      List<string> tempList = new List<string>();
+      string textResult = "";
 
       foreach(var item in hundredsTranslation)
       {
@@ -130,12 +133,15 @@ namespace NumbersToWords.Models
 
       for (int i = 0; i < numeratedToText.Count; i++)
       {
-        Numerated += numeratedToText[i];
+        textResult += numeratedToText[i];
         if (i + 1 != numeratedToText.Count)
         {
-          Numerated += " ";
+          textResult += " ";
         }
       }
+
+      tempList.Add(textResult);
+      NumeratedTriplets = tempList;
     }
 
     // Translators
