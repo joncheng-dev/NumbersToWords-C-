@@ -116,254 +116,254 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(newListOfStrings, newNumbers.NumeratedTriplets);
     }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList009_Void()
-    // {
-    //   string userInput = "9";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("009"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList009_Void()
+    {
+      string userInput = "9";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("009"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList011_Void()
-    // {
-    //   string userInput = "11";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("011"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList011_Void()
+    {
+      string userInput = "11";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("011"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void TripletIntoPlaceValues_ReturnsATriplet001IntoACharacterList_Void()
-    // {
-    //   string userInput = "1";
+    [TestMethod]
+    public void TripletIntoPlaceValues_ReturnsATriplet001IntoACharacterList_Void()
+    {
+      string userInput = "1";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "001"
-    //   // result should be a list of 0, 0, 1
-    //   List<char> result = Numbers.TripletIntoPlaceValues("001");
-    //   // List to compare results to -- 
-    //   List<char> testList = new List<char>();
-    //   testList.Add('0');
-    //   testList.Add('0');
-    //   testList.Add('1');
-    //   // Check if both lists match in composition.            
-    //   Assert.AreEqual(result.Count, testList.Count);
-    //   for (int i = 0; i < result.Count; i++)
-    //   {
-    //     Assert.AreEqual(result[i], testList[i]);
-    //   }
-    // }
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "001"
+      // result should be a list of 0, 0, 1
+      List<char> result = Numbers.TripletIntoPlaceValues("001");
+      // List to compare results to -- 
+      List<char> testList = new List<char>();
+      testList.Add('0');
+      testList.Add('0');
+      testList.Add('1');
+      // Check if both lists match in composition.            
+      Assert.AreEqual(result.Count, testList.Count);
+      for (int i = 0; i < result.Count; i++)
+      {
+        Assert.AreEqual(result[i], testList[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void TripletIntoPlaceValues_ReturnsATriplet302IntoACharacterList_Void()
-    // {
-    //   string userInput = "302";
+    [TestMethod]
+    public void TripletIntoPlaceValues_ReturnsATriplet302IntoACharacterList_Void()
+    {
+      string userInput = "302";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "302"
-    //   // result should be a list of 3, 0, 2
-    //   List<char> result = Numbers.TripletIntoPlaceValues("302");
-    //   // List to compare results to -- 
-    //   List<char> testList = new List<char>();
-    //   testList.Add('3');
-    //   testList.Add('0');
-    //   testList.Add('2');
-    //   // Check if both lists match in composition.            
-    //   Assert.AreEqual(result.Count, testList.Count);
-    //   for (int i = 0; i < result.Count; i++)
-    //   {
-    //     Assert.AreEqual(result[i], testList[i]);
-    //   }
-    // }
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "302"
+      // result should be a list of 3, 0, 2
+      List<char> result = Numbers.TripletIntoPlaceValues("302");
+      // List to compare results to -- 
+      List<char> testList = new List<char>();
+      testList.Add('3');
+      testList.Add('0');
+      testList.Add('2');
+      // Check if both lists match in composition.            
+      Assert.AreEqual(result.Count, testList.Count);
+      for (int i = 0; i < result.Count; i++)
+      {
+        Assert.AreEqual(result[i], testList[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary1_Void()
-    // {
-    //   string userInput = "1";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary1_Void()
+    {
+      string userInput = "1";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "001"
-    //   // Separate into digits of place value.
-    //   // index 0 --> hundreds
-    //   // index 1 --> tens
-    //   // index 2 --> ones
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("001");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "001"
+      // Separate into digits of place value.
+      // index 0 --> hundreds
+      // index 1 --> tens
+      // index 2 --> ones
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("001");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "one";
-    //   Assert.AreEqual(newNumbers.Numerated, numeratedTriplet);
-    // }
+      string result = "one";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList254_Void()
-    // {
-    //   string userInput = "254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList254_Void()
+    {
+      string userInput = "254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList1254_Void()
-    // {
-    //   // string userInput = "4200";
-    //   string userInput = "1254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("001");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList1254_Void()
+    {
+      // string userInput = "4200";
+      string userInput = "1254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("001");
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList71254_Void()
-    // {
-    //   string userInput = "71254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("071");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList71254_Void()
+    {
+      string userInput = "71254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("071");
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList671254_Void()
-    // {
-    //   string userInput = "671254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("671");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList671254_Void()
+    {
+      string userInput = "671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("671");
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList9671254_Void()
-    // {
-    //   string userInput = "9671254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("009");
-    //   newPartition.Add("671");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList9671254_Void()
+    {
+      string userInput = "9671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("009");
+      newPartition.Add("671");
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList90671254_Void()
-    // {
-    //   string userInput = "90671254";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("090");
-    //   newPartition.Add("671");
-    //   newPartition.Add("254"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList90671254_Void()
+    {
+      string userInput = "90671254";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("090");
+      newPartition.Add("671");
+      newPartition.Add("254"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList890671452_Void()
-    // {
-    //   string userInput = "890671452";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("890");
-    //   newPartition.Add("671");
-    //   newPartition.Add("452"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList890671452_Void()
+    {
+      string userInput = "890671452";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("890");
+      newPartition.Add("671");
+      newPartition.Add("452"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
-    // [TestMethod]
-    // public void NumberSplitter_UserInputIntoTripletsInList3890671452_Void()
-    // {
-    //   string userInput = "3890671452";
-    //   List<string> newPartition = new List<string>();
-    //   newPartition.Add("003");
-    //   newPartition.Add("890");
-    //   newPartition.Add("671");
-    //   newPartition.Add("452"); 
+    [TestMethod]
+    public void NumberSplitter_UserInputIntoTripletsInList3890671452_Void()
+    {
+      string userInput = "3890671452";
+      List<string> newPartition = new List<string>();
+      newPartition.Add("003");
+      newPartition.Add("890");
+      newPartition.Add("671");
+      newPartition.Add("452"); 
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
 
-    //   Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
-    //   for (int i = 0; i < newPartition.Count; i++)
-    //   {
-    //     Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
-    //   }
-    // }
+      Assert.AreEqual(newPartition.Count, newNumbers.PartitionedValues.Count);
+      for (int i = 0; i < newPartition.Count; i++)
+      {
+        Assert.AreEqual(newPartition[i], newNumbers.PartitionedValues[i]);
+      }
+    }
 
     // [TestMethod]
     // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary100_Void()
@@ -467,13 +467,13 @@ namespace NumbersToWords.Tests
       string numeratedTriplet = "eight hundred eighty eight";
       testing.Add(numeratedTriplet);
 
-      // Assert.AreEqual(testing[0], newNumbers.NumeratedTriplets[0]);
+      Assert.AreEqual(testing[0], newNumbers.NumeratedTriplets[0]);
 
-      Assert.AreEqual(testing.Count, newNumbers.NumeratedTriplets.Count);
-      for (int i = 0; i < testing.Count; i++)
-      {
-        Assert.AreEqual(testing[i], newNumbers.NumeratedTriplets[i]);
-      }      
+      // Assert.AreEqual(testing.Count, newNumbers.NumeratedTriplets.Count);
+      // for (int i = 0; i < testing.Count; i++)
+      // {
+      //   Assert.AreEqual(testing[i], newNumbers.NumeratedTriplets[i]);
+      // }      
     }
 
 
