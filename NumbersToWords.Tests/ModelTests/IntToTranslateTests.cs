@@ -365,93 +365,93 @@ namespace NumbersToWords.Tests
       }
     }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary100_Void()
-    // {
-    //   string userInput = "100";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary100_Void()
+    {
+      string userInput = "100";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "100"
-    //   // Separate into digits of place value.
-    //   // index 0 --> hundreds
-    //   // index 1 --> tens
-    //   // index 2 --> ones
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("100");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "100"
+      // Separate into digits of place value.
+      // index 0 --> hundreds
+      // index 1 --> tens
+      // index 2 --> ones
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("100");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "one hundred";
-    //   Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
-    // }
+      string result = "one hundred";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary70_Void()
-    // {
-    //   string userInput = "70";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary70_Void()
+    {
+      string userInput = "70";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "070"
-    //   // Separate into digits of place value.
-    //   // index 0 --> hundreds
-    //   // index 1 --> tens
-    //   // index 2 --> ones
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("070");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "070"
+      // Separate into digits of place value.
+      // index 0 --> hundreds
+      // index 1 --> tens
+      // index 2 --> ones
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("070");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "seventy";
-    //   Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
-    // }
+      string result = "seventy";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary13_Void()
-    // {
-    //   string userInput = "13";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary13_Void()
+    {
+      string userInput = "13";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "013"
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("013");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "013"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("013");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "thirteen";
-    //   Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
-    // }
+      string result = "thirteen";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary23_Void()
-    // {
-    //   string userInput = "23";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary23_Void()
+    {
+      string userInput = "23";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "023"
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("023");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "023"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("023");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "twenty three";
-    //   Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
-    // }
+      string result = "twenty three";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
-    // [TestMethod]
-    // public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary519_Void()
-    // {
-    //   string userInput = "519";
+    [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary519_Void()
+    {
+      string userInput = "519";
 
-    //   Numbers newNumbers = new Numbers(userInput);
-    //   newNumbers.NumberSplitter();
-    //   // PartitionedValues is now "519"
-    //   List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("519");
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "519"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("519");
 
-    //   newNumbers.GiveNumeratedTriplet(tripletIntoChars);
+      newNumbers.GiveNumeratedTriplet(tripletIntoChars);
       
-    //   string numeratedTriplet = "five hundred nineteen";
-    //   Assert.AreEqual(numeratedTriplet, newNumbers.Numerated);
-    // }
+      string result = "five hundred nineteen";
+      Assert.AreEqual(result, newNumbers.NumeratedTriplets[0]);
+    }
 
     [TestMethod]
     public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary888_Void()
