@@ -87,14 +87,14 @@ namespace NumbersToWords.Models
       return digitsIntoPlaceValue;
     } 
 
-    public void GiveNumeratedTriplet(List<char> tripletIntoPlaceValues)
+    public static List<string> GiveNumeratedTriplet(List<char> tripletIntoPlaceValues)
     {
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
       List<string> tempList = new List<string>();
       string textResult = "";
 
-      foreach(var item in hundredsTranslation)
+      foreach(var item in Numbers.hundredsTranslation)
       {
         if (item.Key == tripletIntoPlaceValues[0])
         {
@@ -102,7 +102,7 @@ namespace NumbersToWords.Models
         }
       }
 
-      foreach(var item in tensTranslation)
+      foreach(var item in Numbers.tensTranslation)
       {
         if (item.Key == tripletIntoPlaceValues[1])
         {
@@ -112,7 +112,7 @@ namespace NumbersToWords.Models
 
       if (tripletIntoPlaceValues[1] == '1')
       {
-        foreach(var item in tensTranslationSpecific)
+        foreach(var item in Numbers.tensTranslationSpecific)
         {
           if (item.Key == tripletIntoPlaceValues[2])
           {
@@ -122,7 +122,7 @@ namespace NumbersToWords.Models
       } 
       else 
       {
-        foreach(var item in onesTranslation)
+        foreach(var item in Numbers.onesTranslation)
         {
           if (item.Key == tripletIntoPlaceValues[2])
           {
@@ -141,11 +141,11 @@ namespace NumbersToWords.Models
       }
 
       tempList.Add(textResult);
-      NumeratedTriplets = tempList;
+      return tempList;
     }
 
     // Translators
-    Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
+    static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
       { '1', "one" },
       { '2', "two" },
@@ -158,7 +158,7 @@ namespace NumbersToWords.Models
       { '9', "nine" },
     };
 
-    Dictionary<char, string> tensTranslation = new Dictionary<char, string>()
+    static Dictionary<char, string> tensTranslation = new Dictionary<char, string>()
     {
       { '2', "twenty"},
       { '3', "thirty"},
@@ -170,7 +170,7 @@ namespace NumbersToWords.Models
       { '9', "ninety"},
     };
 
-    Dictionary<char, string> tensTranslationSpecific = new Dictionary<char, string>()
+    static Dictionary<char, string> tensTranslationSpecific = new Dictionary<char, string>()
     {
       { '0', "ten"},
       { '1', "eleven" },
@@ -184,7 +184,7 @@ namespace NumbersToWords.Models
       { '9', "nineteen" },
     };
 
-    Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
+    static Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
     {
       { '1', "one hundred"},
       { '2', "two hundred"},
