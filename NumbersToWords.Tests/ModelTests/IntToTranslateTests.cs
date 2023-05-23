@@ -461,11 +461,17 @@ namespace NumbersToWords.Tests
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues is now "888"
-      newNumbers.NumeratedTriplets = Numbers.GiveNumeratedTriplet(Numbers.TripletIntoPlaceValues("888"));
+      List<char> inputTriplet = Numbers.TripletIntoPlaceValues("888");
+      string result = Numbers.GiveNumeratedTriplet(inputTriplet);
+
+      List<string> tempList = new List<string>();
+      tempList.Add(result);
 
       List<string> testing = new List<string>();
       string numeratedTriplet = "eight hundred eighty eight";
       testing.Add(numeratedTriplet);
+
+      newNumbers.NumeratedTriplets = tempList;
 
       Assert.AreEqual(testing[0], newNumbers.NumeratedTriplets[0]);
 

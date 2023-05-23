@@ -87,11 +87,11 @@ namespace NumbersToWords.Models
       return digitsIntoPlaceValue;
     } 
 
-    public static List<string> GiveNumeratedTriplet(List<char> tripletIntoPlaceValues)
+    public static string GiveNumeratedTriplet(List<char> tripletIntoPlaceValues)
     {
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
-      List<string> tempList = new List<string>();
+      // List<string> tempList = new List<string>();
       string textResult = "";
 
       foreach(var item in Numbers.hundredsTranslation)
@@ -140,8 +140,7 @@ namespace NumbersToWords.Models
         }
       }
 
-      tempList.Add(textResult);
-      return tempList;
+      return textResult;
     }
 
     // Translators
