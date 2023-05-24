@@ -524,6 +524,57 @@ namespace NumbersToWords.Tests
       // }      
     }
 
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult_Void()
+    {
+      string userInput = "1001";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues should be..
+      // PartitionedValues[0] = "001";
+      // PartitionedValues[1] = "001";
+      List<string> tempList = new List<string>();
+      // PartitionedValues[0] gets sent to TripletIntoPlaceValues
+      // returned List: 0, 0, 1 
+      for (int i = 0; i < newNumbers.PartitionedValues.Count; i++)
+      {
+        List<char> inputTriplet = Numbers.TripletIntoPlaceValues(newNumbers.PartitionedValues[i]);
+        string result = Numbers.GiveNumeratedTriplet(inputTriplet);
+        // GiveNumeratedTriplet(entered List)
+        // returns string "one"
+        tempList.Add(result);
+      }
+      
+      List<string> testing = new List<string>();
+      string numeratedTriplet = "one";
+      testing.Add(numeratedTriplet);
+      testing.Add(numeratedTriplet);
+
+      newNumbers.NumeratedTriplets = tempList;
+
+      string concatenatedUserInput = "";
+      for (int j = 0; j < newNumbers.NumeratedTriplets.Count; j++)
+      {
+        if (j < newNumbers.NumeratedTriplets.Count - 1)
+        {
+          concatenatedUserInput += newNumbers.NumeratedTriplets[j] + " ";
+        }
+        else 
+        {
+          concatenatedUserInput += newNumbers.NumeratedTriplets[j];
+        }
+      }
+      string concatenatedTest = "one one";
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);
+
+      // Assert.AreEqual(testing.Count, newNumbers.NumeratedTriplets.Count);
+      // for (int i = 0; i < testing.Count; i++)
+      // {
+      //   Assert.AreEqual(testing[i], newNumbers.NumeratedTriplets[i]);
+      // }            
+    }
 
     // [TestMethod]
     // public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()
