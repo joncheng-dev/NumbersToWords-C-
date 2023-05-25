@@ -143,6 +143,11 @@ namespace NumbersToWords.Models
       return textResult;
     }
 
+    public string GiveNumeratedUserInput()
+    {
+      return "one one";
+    }
+
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
