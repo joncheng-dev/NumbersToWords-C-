@@ -537,6 +537,7 @@ namespace NumbersToWords.Tests
       
       // PartitionedValues[0] gets sent to TripletIntoPlaceValues
       // returned List: 0, 0, 1 
+
       string concatenatedTest = "one one";
       string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
 

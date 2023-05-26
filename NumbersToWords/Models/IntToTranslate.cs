@@ -145,7 +145,30 @@ namespace NumbersToWords.Models
 
     public string GiveNumeratedUserInput()
     {
-      return "one one";
+      List<string> tempList = new List<string>();
+      for (int i = 0; i < PartitionedValues.Count; i++)
+      {
+        List<char> inputTriplet = Numbers.TripletIntoPlaceValues(PartitionedValues[i]);
+        string result = Numbers.GiveNumeratedTriplet(inputTriplet);
+        // GiveNumeratedTriplet(entered List)
+        // creates numerated string of triplet;
+        tempList.Add(result);
+      }
+      NumeratedTriplets = tempList;
+
+      string concatenatedUserInput = "";
+      for (int j = 0; j < NumeratedTriplets.Count; j++)
+      {
+        if (j < NumeratedTriplets.Count - 1)
+        {
+          concatenatedUserInput += NumeratedTriplets[j] + " ";
+        }
+        else 
+        {
+          concatenatedUserInput += NumeratedTriplets[j];
+        }
+      }      
+      return concatenatedUserInput;
     }
 
     // Translators
