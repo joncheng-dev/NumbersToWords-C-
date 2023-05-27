@@ -160,11 +160,25 @@ namespace NumbersToWords.Models
       for (int j = 0; j < NumeratedTriplets.Count; j++)
       {
         concatenatedUserInput += NumeratedTriplets[j];
+        if (j < NumeratedTriplets.Count - 1)
+        {
+          concatenatedUserInput += " ";
+        }
+
+        if(NumeratedTriplets.Count == 2)
+        {
+          if (j == 0)
+          {
+            concatenatedUserInput += "thousand";
+          }
+        }
         
         if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
         }
+
+
       }      
       return concatenatedUserInput;
     }

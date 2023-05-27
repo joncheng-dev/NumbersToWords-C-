@@ -538,12 +538,25 @@ namespace NumbersToWords.Tests
       // PartitionedValues[0] gets sent to TripletIntoPlaceValues
       // returned List: 0, 0, 1 
 
-      string concatenatedTest = "one one";
+      string concatenatedTest = "one thousand one";
       string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
 
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1888_Void()
+    {
+      string userInput = "1888";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      string concatenatedTest = "one thousand eight hundred eighty eight";
+      string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
+    }
 
     // [TestMethod]
     // public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()
