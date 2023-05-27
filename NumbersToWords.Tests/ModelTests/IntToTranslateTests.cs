@@ -586,6 +586,20 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1234567_Void()
+    {
+      string userInput = "1234567";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+
+      string concatenatedTest = "one million two hundred thirty four thousand five hundred sixty seven";
+      string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
+    }
+
     // [TestMethod]
     // public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()
     // {

@@ -164,7 +164,17 @@ namespace NumbersToWords.Models
         {
           concatenatedUserInput += " ";
         }
-
+        if(NumeratedTriplets.Count == 3)
+        {
+          if (j == 0)
+          {
+            concatenatedUserInput += "million";
+          }
+          if (j == 1)
+          {
+            concatenatedUserInput += "thousand";            
+          }
+        }
         if(NumeratedTriplets.Count == 2)
         {
           if (j == 0)
@@ -172,7 +182,7 @@ namespace NumbersToWords.Models
             concatenatedUserInput += "thousand";
           }
         }
-        
+
         if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
