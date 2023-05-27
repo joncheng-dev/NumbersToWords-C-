@@ -525,7 +525,7 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult_Void()
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1001_Void()
     {
       string userInput = "1001";
 
@@ -541,44 +541,9 @@ namespace NumbersToWords.Tests
       string concatenatedTest = "one one";
       string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
 
-      Assert.AreEqual(concatenatedTest, concatenatedUserInput);
-
-      // Assert.AreEqual(testing.Count, newNumbers.NumeratedTriplets.Count);
-      // for (int i = 0; i < testing.Count; i++)
-      // {
-      //   Assert.AreEqual(testing[i], newNumbers.NumeratedTriplets[i]);
-      // }            
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
-      // List<string> tempList = new List<string>();
-      // for (int i = 0; i < newNumbers.PartitionedValues.Count; i++)
-      // {
-      //   List<char> inputTriplet = Numbers.TripletIntoPlaceValues(newNumbers.PartitionedValues[i]);
-      //   string result = Numbers.GiveNumeratedTriplet(inputTriplet);
-      //   // GiveNumeratedTriplet(entered List)
-      //   // returns string "one"
-      //   tempList.Add(result);
-      // }
-      
-      // List<string> testing = new List<string>();
-      // string numeratedTriplet = "one";
-      // testing.Add(numeratedTriplet);
-      // testing.Add(numeratedTriplet);
-
-      // newNumbers.NumeratedTriplets = tempList;
-
-      // string concatenatedUserInput = "";
-      // for (int j = 0; j < newNumbers.NumeratedTriplets.Count; j++)
-      // {
-      //   if (j < newNumbers.NumeratedTriplets.Count - 1)
-      //   {
-      //     concatenatedUserInput += newNumbers.NumeratedTriplets[j] + " ";
-      //   }
-      //   else 
-      //   {
-      //     concatenatedUserInput += newNumbers.NumeratedTriplets[j];
-      //   }
-      // }
 
     // [TestMethod]
     // public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()

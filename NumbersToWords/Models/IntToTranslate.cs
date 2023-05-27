@@ -159,17 +159,25 @@ namespace NumbersToWords.Models
       string concatenatedUserInput = "";
       for (int j = 0; j < NumeratedTriplets.Count; j++)
       {
+        concatenatedUserInput += NumeratedTriplets[j];
+        
         if (j < NumeratedTriplets.Count - 1)
         {
-          concatenatedUserInput += NumeratedTriplets[j] + " ";
-        }
-        else 
-        {
-          concatenatedUserInput += NumeratedTriplets[j];
+          concatenatedUserInput += " ";
         }
       }      
       return concatenatedUserInput;
     }
+
+        // if (j < NumeratedTriplets.Count - 1)
+        // {
+        //   concatenatedUserInput += NumeratedTriplets[j] + " ";
+        // }
+        // else 
+        // {
+        //   concatenatedUserInput += NumeratedTriplets[j];
+        // }
+
 
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
