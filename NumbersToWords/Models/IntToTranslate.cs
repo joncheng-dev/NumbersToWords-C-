@@ -167,6 +167,21 @@ namespace NumbersToWords.Models
           concatenatedUserInput += " ";
         }
         // Adds suffix if applicable
+        if (NumeratedTriplets.Count == 4)
+        {
+          if (j == 0)
+          {
+            concatenatedUserInput += "billion";
+          }
+          if (j == 1)
+          {
+            concatenatedUserInput += "million";
+          }
+          if (j == 2)
+          {
+            concatenatedUserInput += "thousand";            
+          }          
+        }
         if (NumeratedTriplets.Count == 3)
         {
           if (j == 0)
