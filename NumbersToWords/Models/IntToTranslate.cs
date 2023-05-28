@@ -159,12 +159,15 @@ namespace NumbersToWords.Models
       string concatenatedUserInput = "";
       for (int j = 0; j < NumeratedTriplets.Count; j++)
       {
+        // Adds numerated triplet
         concatenatedUserInput += NumeratedTriplets[j];
+        // Adds space to end if needed        
         if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
         }
-        if(NumeratedTriplets.Count == 3)
+        // Adds suffix if applicable
+        if (NumeratedTriplets.Count == 3)
         {
           if (j == 0)
           {
@@ -175,14 +178,14 @@ namespace NumbersToWords.Models
             concatenatedUserInput += "thousand";            
           }
         }
-        if(NumeratedTriplets.Count == 2)
+        if (NumeratedTriplets.Count == 2)
         {
           if (j == 0)
           {
             concatenatedUserInput += "thousand";
           }
         }
-
+        // Adds space to end if needed
         if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
