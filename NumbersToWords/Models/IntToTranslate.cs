@@ -157,6 +157,8 @@ namespace NumbersToWords.Models
       NumeratedTriplets = tempList;
 
       string concatenatedUserInput = "";
+      // Variable holding Key for adding suffixes
+      int suffixKeyCounter = 9;
       for (int j = 0; j < NumeratedTriplets.Count; j++)
       {
         // Adds numerated triplet
@@ -166,79 +168,43 @@ namespace NumbersToWords.Models
         {
           concatenatedUserInput += " ";
         }
-        // Adds suffix if applicable
-        if (NumeratedTriplets.Count == 5)
+        // // Adds suffix if applicable
+        switch(NumeratedTriplets.Count)
         {
-          if (j == 0)
-          {
-            concatenatedUserInput += "trillion";            
-          }
-          if (j == 1)
-          {
-            concatenatedUserInput += "billion";
-          }
-          if (j == 2)
-          {
-            concatenatedUserInput += "million";
-          }
-          if (j == 3)
-          {
-            concatenatedUserInput += "thousand";            
-          }           
+          case 5:
+            suffixKeyCounter = 0 + j;
+            break;
+          case 4:
+            suffixKeyCounter = 1 + j;
+            break;
+          case 3:
+            suffixKeyCounter = 2 + j;
+            break;
+          case 2:
+            suffixKeyCounter = 3 + j;
+            break;
+          default:
+            suffixKeyCounter = 9;
+            break;
         }
-        if (NumeratedTriplets.Count == 4)
-        {
-          if (j == 0)
-          {
-            concatenatedUserInput += "billion";
-          }
-          if (j == 1)
-          {
-            concatenatedUserInput += "million";
-          }
-          if (j == 2)
-          {
-            concatenatedUserInput += "thousand";            
-          }          
-        }
-        if (NumeratedTriplets.Count == 3)
-        {
-          if (j == 0)
-          {
-            concatenatedUserInput += "million";
-          }
-          if (j == 1)
-          {
-            concatenatedUserInput += "thousand";            
-          }
-        }
-        if (NumeratedTriplets.Count == 2)
-        {
-          if (j == 0)
-          {
-            concatenatedUserInput += "thousand";
-          }
-        }
+        Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
+        concatenatedUserInput += retrieved;
         // Adds space to end if needed
         if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
         }
-
-
       }      
       return concatenatedUserInput;
     }
 
-        // if (j < NumeratedTriplets.Count - 1)
-        // {
-        //   concatenatedUserInput += NumeratedTriplets[j] + " ";
-        // }
-        // else 
-        // {
-        //   concatenatedUserInput += NumeratedTriplets[j];
-        // }
-
+    static Dictionary<int, string> suffixes = new Dictionary<int, string>()
+    {
+      {0, "trillion"},
+      {1, "billion"},
+      {2, "million"},
+      {3, "thousand"},
+    };
 
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
@@ -343,3 +309,62 @@ namespace NumbersToWords.Models
 
     //   PartitionedValues = temporaryList;
     // }          
+
+
+
+            // if (NumeratedTriplets.Count == 5)
+        // {
+        //   if (j == 0)
+        //   {
+        //     concatenatedUserInput += "trillion";            
+        //   }
+        //   if (j == 1)
+        //   {
+        //     concatenatedUserInput += "billion";
+        //   }
+        //   if (j == 2)
+        //   {
+        //     concatenatedUserInput += "million";
+        //   }
+        //   if (j == 3)
+        //   {
+        //     concatenatedUserInput += "thousand";            
+        //   }           
+        // }
+        // if (NumeratedTriplets.Count == 4)
+        // {
+        //   if (j == 0)
+        //   {
+        //     concatenatedUserInput += "billion";
+        //   }
+        //   if (j == 1)
+        //   {
+        //     concatenatedUserInput += "million";
+        //   }
+        //   if (j == 2)
+        //   {
+        //     concatenatedUserInput += "thousand";            
+        //   }          
+        // }
+        // if (NumeratedTriplets.Count == 3)
+        // {
+        //   if (j == 0)
+        //   {
+        //     concatenatedUserInput += "million";
+        //   }
+        //   if (j == 1)
+        //   {
+        //     concatenatedUserInput += "thousand";            
+        //   }
+        // }
+
+
+
+
+                  // foreach (var item in Numbers.suffixes)
+          // {
+          //   if (item.Key == suffixKeyCounter)
+          //   {
+          //     concatenatedUserInput += item.Value;
+          //   }
+          // }

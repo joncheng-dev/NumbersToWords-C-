@@ -684,6 +684,9 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
+
+
+
     // [TestMethod]
     // public void GiveNumeratedTotalNumber_CountsElementsOfPartitionedValuesAndCorrectlyConcatenatesTotalString1_Void()
     // {
