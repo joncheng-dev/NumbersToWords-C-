@@ -198,14 +198,6 @@ namespace NumbersToWords.Models
       return concatenatedUserInput;
     }
 
-    static Dictionary<int, string> suffixes = new Dictionary<int, string>()
-    {
-      {0, "trillion"},
-      {1, "billion"},
-      {2, "million"},
-      {3, "thousand"},
-    };
-
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
@@ -258,113 +250,13 @@ namespace NumbersToWords.Models
       { '8', "eight hundred"},
       { '9', "nine hundred"},
     };
+
+    static Dictionary<int, string> suffixes = new Dictionary<int, string>()
+    {
+      {0, "trillion"},
+      {1, "billion"},
+      {2, "million"},
+      {3, "thousand"},
+    };
   }
 }
-
-
-          // // If XXXXX without following 4 digit number following --  i.e. 9000, but has a XXX three digit number or after   
-          // else if ((i + 1 < PartitionedValues.Count) && PartitionedValues[i + 1].ToString().Length != 4)
-          // {
-          //   foreach(var item in tenThousandsTranslation)
-          //   {
-          //     if (item.Key == PartitionedValues[i])
-          //     {
-          //       temporaryList.Add(item.Value);
-          //     }
-          //   }
-          //   temporaryList.Add(thousandsTranslation[0000]);
-          //   i++;
-          // }
-          // // If XXXXX without any additional numbers
-          // else if (i == PartitionedValues.Count)
-          // {
-          //   foreach(var item in tenThousandsTranslation)
-          //   {
-          //     if (item.Key == PartitionedValues[i])
-          //     {
-          //       temporaryList.Add(item.Value);
-          //     }
-          //   }
-          //   temporaryList.Add(thousandsTranslation[0000]);
-          // } 
-
-
-    // public void NumberSplitter()
-    // {
-    //   List<double> temporaryList = new List<double>();
-
-    //   double sum = 0;
-    //   int userInputInteger = int.Parse(UserInput);
-
-    //   for (int i = 0; i < UserInput.Length; i++) 
-    //   {
-    //     double result = userInputInteger % (Math.Pow(10, i + 1)) - sum;
-    //     sum += result;
-
-    //     if (result != 0) 
-    //     {
-    //       temporaryList.Insert(0, result);
-    //     }
-    //   }
-
-    //   PartitionedValues = temporaryList;
-    // }          
-
-
-
-            // if (NumeratedTriplets.Count == 5)
-        // {
-        //   if (j == 0)
-        //   {
-        //     concatenatedUserInput += "trillion";            
-        //   }
-        //   if (j == 1)
-        //   {
-        //     concatenatedUserInput += "billion";
-        //   }
-        //   if (j == 2)
-        //   {
-        //     concatenatedUserInput += "million";
-        //   }
-        //   if (j == 3)
-        //   {
-        //     concatenatedUserInput += "thousand";            
-        //   }           
-        // }
-        // if (NumeratedTriplets.Count == 4)
-        // {
-        //   if (j == 0)
-        //   {
-        //     concatenatedUserInput += "billion";
-        //   }
-        //   if (j == 1)
-        //   {
-        //     concatenatedUserInput += "million";
-        //   }
-        //   if (j == 2)
-        //   {
-        //     concatenatedUserInput += "thousand";            
-        //   }          
-        // }
-        // if (NumeratedTriplets.Count == 3)
-        // {
-        //   if (j == 0)
-        //   {
-        //     concatenatedUserInput += "million";
-        //   }
-        //   if (j == 1)
-        //   {
-        //     concatenatedUserInput += "thousand";            
-        //   }
-        // }
-
-
-
-
-                  // foreach (var item in Numbers.suffixes)
-          // {
-          //   if (item.Key == suffixKeyCounter)
-          //   {
-          //     concatenatedUserInput += item.Value;
-          //   }
-          // }
