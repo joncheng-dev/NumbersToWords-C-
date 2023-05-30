@@ -684,7 +684,20 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1000_Void()
+    {
+      string userInput = "1000";
 
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues[0] = "001";
+      // PartitionedValues[1] = "000";
+      string concatenatedTest = "one thousand";
+      string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
+    }
 
 
     // [TestMethod]
