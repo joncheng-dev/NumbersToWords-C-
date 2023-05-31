@@ -91,17 +91,15 @@ namespace NumbersToWords.Models
     {
       // List holding the numerated numbers as text
       List<string> numeratedToText = new List<string>();
-      // List<string> tempList = new List<string>();
       string textResult = "";
 
       foreach(var item in Numbers.hundredsTranslation)
       {
-        if (item.Key == tripletIntoPlaceValues[0])
+        if (item.Key == tripletIntoPlaceValues[0]) 
         {
           numeratedToText.Add(item.Value);
         }
       }
-
       foreach(var item in Numbers.tensTranslation)
       {
         if (item.Key == tripletIntoPlaceValues[1])
@@ -190,7 +188,7 @@ namespace NumbersToWords.Models
         Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
         concatenatedUserInput += retrieved;
         // Adds space to end if needed
-        if (j < NumeratedTriplets.Count - 1)
+        if ((j < NumeratedTriplets.Count - 1) && NumeratedTriplets[j] != "zero zero zero")
         {
           concatenatedUserInput += " ";
         }
@@ -201,6 +199,7 @@ namespace NumbersToWords.Models
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
+      { '0', "zero" },
       { '1', "one" },
       { '2', "two" },
       { '3', "three" },
@@ -214,6 +213,7 @@ namespace NumbersToWords.Models
 
     static Dictionary<char, string> tensTranslation = new Dictionary<char, string>()
     {
+      { '0', "zero"},
       { '2', "twenty"},
       { '3', "thirty"},
       { '4', "forty"},
@@ -240,6 +240,7 @@ namespace NumbersToWords.Models
 
     static Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
     {
+      { '0', "zero"},
       { '1', "one hundred"},
       { '2', "two hundred"},
       { '3', "three hundred"},
