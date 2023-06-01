@@ -188,7 +188,7 @@ namespace NumbersToWords.Models
         Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
         concatenatedUserInput += retrieved;
         // Adds space to end if needed
-        if ((j < NumeratedTriplets.Count - 1) && NumeratedTriplets[j] != "zero zero zero")
+        if (j < NumeratedTriplets.Count - 1)
         {
           concatenatedUserInput += " ";
         }
@@ -199,7 +199,7 @@ namespace NumbersToWords.Models
     // Translators
     static Dictionary<char, string> onesTranslation = new Dictionary<char, string>()
     {
-      { '0', "zero" },
+      // { '0', "zero" },
       { '1', "one" },
       { '2', "two" },
       { '3', "three" },
@@ -213,7 +213,7 @@ namespace NumbersToWords.Models
 
     static Dictionary<char, string> tensTranslation = new Dictionary<char, string>()
     {
-      { '0', "zero"},
+      // { '0', "zero"},
       { '2', "twenty"},
       { '3', "thirty"},
       { '4', "forty"},
@@ -240,7 +240,7 @@ namespace NumbersToWords.Models
 
     static Dictionary<char, string> hundredsTranslation = new Dictionary<char, string>()
     {
-      { '0', "zero"},
+      // { '0', "zero"},
       { '1', "one hundred"},
       { '2', "two hundred"},
       { '3', "three hundred"},
