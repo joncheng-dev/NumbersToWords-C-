@@ -190,7 +190,10 @@ namespace NumbersToWords.Models
         // Adds space to end if needed
         if (j < NumeratedTriplets.Count - 1)
         {
-          concatenatedUserInput += " ";
+          if (PartitionedValues[j + 1] != "000")
+          {
+            concatenatedUserInput += " ";
+          }
         }
       }      
       return concatenatedUserInput;
