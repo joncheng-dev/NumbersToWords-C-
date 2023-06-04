@@ -185,12 +185,15 @@ namespace NumbersToWords.Models
             suffixKeyCounter = 9;
             break;
         }
-        Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
-        concatenatedUserInput += retrieved;
+        if (PartitionedValues[j] != "000")
+        {
+          Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
+          concatenatedUserInput += retrieved;
+        }
         // Adds space to end if needed
         if (j < NumeratedTriplets.Count - 1)
         {
-          if (PartitionedValues[j + 1] != "000")
+          if (PartitionedValues[j] != "000" && PartitionedValues[j + 1] != "000")
           {
             concatenatedUserInput += " ";
           }
