@@ -715,6 +715,22 @@ namespace NumbersToWords.Tests
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
     }
 
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1000000_Void()
+    {
+      string userInput = "1000000";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues[0] = "001";
+      // PartitionedValues[1] = "000";
+      // PartitionedValues[2] = "123";
+      string concatenatedTest = "one million";
+      string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
+    }
+
     // [TestMethod]
     // public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult0_Void()
     // {
