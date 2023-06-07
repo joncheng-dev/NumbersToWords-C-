@@ -700,16 +700,33 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
-    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1000123_Void()
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1000123000_Void()
     {
-      string userInput = "1000123";
+      string userInput = "1000123000";
 
       Numbers newNumbers = new Numbers(userInput);
       newNumbers.NumberSplitter();
       // PartitionedValues[0] = "001";
       // PartitionedValues[1] = "000";
       // PartitionedValues[2] = "123";
-      string concatenatedTest = "one million one hundred twenty three";
+      // PartitionedValues[3] = "000";
+      string concatenatedTest = "one billion one hundred twenty three thousand";
+      string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
+
+      Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
+    }
+
+    [TestMethod]
+    public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1123000_Void()
+    {
+      string userInput = "1123000";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues[0] = "001";
+      // PartitionedValues[1] = "123";
+      // PartitionedValues[2] = "000";
+      string concatenatedTest = "one million one hundred twenty three thousand";
       string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
 
       Assert.AreEqual(concatenatedTest, concatenatedUserInput);          
@@ -724,7 +741,7 @@ namespace NumbersToWords.Tests
       newNumbers.NumberSplitter();
       // PartitionedValues[0] = "001";
       // PartitionedValues[1] = "000";
-      // PartitionedValues[2] = "123";
+      // PartitionedValues[2] = "000";
       string concatenatedTest = "one million";
       string concatenatedUserInput = newNumbers.GiveNumeratedUserInput();
 
