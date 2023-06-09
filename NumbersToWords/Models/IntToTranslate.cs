@@ -164,10 +164,10 @@ namespace NumbersToWords.Models
         // Adds space to end if needed        
         if (j < NumeratedTriplets.Count - 1)
         {
-          if (j < NumeratedTriplets.Count)
-          {
+          // if (j < NumeratedTriplets.Count)
+          // {
             concatenatedUserInput += " ";
-          }
+          // }
         }
         // Adds suffix if applicable
         switch(NumeratedTriplets.Count)
