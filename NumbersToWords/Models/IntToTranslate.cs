@@ -159,16 +159,12 @@ namespace NumbersToWords.Models
       int suffixKeyCounter = 9;
       for (int j = 0; j < NumeratedTriplets.Count; j++)
       {
+        if (concatenatedUserInput != "")
+        {
+          concatenatedUserInput += " ";
+        }        
         // Adds numerated triplet
         concatenatedUserInput += NumeratedTriplets[j];
-        // Adds space to end if needed        
-        if (j < NumeratedTriplets.Count - 1)
-        {
-          // if (j < NumeratedTriplets.Count)
-          // {
-            concatenatedUserInput += " ";
-          // }
-        }
         // Adds suffix if applicable
         switch(NumeratedTriplets.Count)
         {
@@ -188,18 +184,14 @@ namespace NumbersToWords.Models
             suffixKeyCounter = 9;
             break;
         }
-        if (PartitionedValues[j] != "000")
+        if (PartitionedValues[j] == "000")
+        {
+          concatenatedUserInput += "";
+        }
+        else if (PartitionedValues[j] != "000")
         {
           Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
           concatenatedUserInput += retrieved;
-        }
-        // Adds space to end if needed
-        if (j < NumeratedTriplets.Count - 1)
-        {
-          if (PartitionedValues[j] != "000" && PartitionedValues[j + 1] != "000")
-          {
-            concatenatedUserInput += " ";
-          }
         }
       }      
       return concatenatedUserInput;
@@ -263,10 +255,75 @@ namespace NumbersToWords.Models
 
     static Dictionary<int, string> suffixes = new Dictionary<int, string>()
     {
-      {0, "trillion"},
-      {1, "billion"},
-      {2, "million"},
-      {3, "thousand"},
+      {0, " trillion"},
+      {1, " billion"},
+      {2, " million"},
+      {3, " thousand"},
     };
   }
 }
+
+
+    // public string GiveNumeratedUserInput()
+    // {
+    //   List<string> tempList = new List<string>();
+    //   for (int i = 0; i < PartitionedValues.Count; i++)
+    //   {
+    //     List<char> inputTriplet = Numbers.TripletIntoPlaceValues(PartitionedValues[i]);
+    //     string result = Numbers.GiveNumeratedTriplet(inputTriplet);
+    //     // GiveNumeratedTriplet(entered List)
+    //     // creates numerated string of triplet;
+    //     tempList.Add(result);
+    //   }
+    //   NumeratedTriplets = tempList;
+
+    //   string concatenatedUserInput = "";
+    //   // Variable holding Key for adding suffixes
+    //   int suffixKeyCounter = 9;
+    //   for (int j = 0; j < NumeratedTriplets.Count; j++)
+    //   {
+    //     // Adds numerated triplet
+    //     concatenatedUserInput += NumeratedTriplets[j];
+    //     // Adds space to end if needed        
+    //     if (j < NumeratedTriplets.Count - 1)
+    //     {
+    //       // if (j < NumeratedTriplets.Count)
+    //       // {
+    //         concatenatedUserInput += " ";
+    //       // }
+    //     }
+    //     // Adds suffix if applicable
+    //     switch(NumeratedTriplets.Count)
+    //     {
+    //       case 5:
+    //         suffixKeyCounter = 0 + j;
+    //         break;
+    //       case 4:
+    //         suffixKeyCounter = 1 + j;
+    //         break;
+    //       case 3:
+    //         suffixKeyCounter = 2 + j;
+    //         break;
+    //       case 2:
+    //         suffixKeyCounter = 3 + j;
+    //         break;
+    //       default:
+    //         suffixKeyCounter = 9;
+    //         break;
+    //     }
+    //     if (PartitionedValues[j] != "000")
+    //     {
+    //       Numbers.suffixes.TryGetValue(suffixKeyCounter, out string retrieved);
+    //       concatenatedUserInput += retrieved;
+    //     }
+    //     // Adds space to end if needed
+    //     if (j < NumeratedTriplets.Count - 1)
+    //     {
+    //       if (PartitionedValues[j] != "000" && PartitionedValues[j + 1] != "000")
+    //       {
+    //         concatenatedUserInput += " ";
+    //       }
+    //     }
+    //   }      
+    //   return concatenatedUserInput;
+    // }
