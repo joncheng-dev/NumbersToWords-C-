@@ -161,7 +161,14 @@ namespace NumbersToWords.Models
       {
         if (concatenatedUserInput != "")
         {
-          concatenatedUserInput += " ";
+          if (PartitionedValues[j] == "000")
+          {
+            concatenatedUserInput += "";
+          }
+          else if (PartitionedValues[j] != "000")
+          {
+            concatenatedUserInput += " ";            
+          }
         }        
         // Adds numerated triplet
         concatenatedUserInput += NumeratedTriplets[j];

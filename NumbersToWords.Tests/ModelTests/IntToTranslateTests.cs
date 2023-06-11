@@ -525,6 +525,29 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
+    public void GiveNumeratedTriplet_TakesListOfDigitsInPlaceValuesAndTranslatesToWordsUsingDictionary000_Void()
+    {
+      string userInput = "000";
+
+      Numbers newNumbers = new Numbers(userInput);
+      newNumbers.NumberSplitter();
+      // PartitionedValues is now "000"
+      List<char> tripletIntoChars = Numbers.TripletIntoPlaceValues("000");
+      string result = Numbers.GiveNumeratedTriplet(tripletIntoChars);
+
+      List<string> tempList = new List<string>();
+      tempList.Add(result);
+
+      List<string> testing = new List<string>();
+      string numeratedTriplet = "";
+      testing.Add(numeratedTriplet);
+
+      newNumbers.NumeratedTriplets = tempList;
+
+      Assert.AreEqual(numeratedTriplet, newNumbers.NumeratedTriplets[0]);
+    }
+
+    [TestMethod]
     public void TranslateUserInput_TakesUserInputCallsOtherMethodsReturnsNumeratedResult1001_Void()
     {
       string userInput = "1001";
